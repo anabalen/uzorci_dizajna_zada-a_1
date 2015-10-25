@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ana-Marija/Desktop/Vjezba/anabalen_zadaca_1/src/foi/uzdiz/anabalen/abstractfactory/DSLR.java</file>
-            <file>file:/C:/Users/Ana-Marija/Desktop/Vjezba/anabalen_zadaca_1/src/foi/uzdiz/anabalen/abstractfactory/DSLM.java</file>
-            <file>file:/C:/Users/Ana-Marija/Desktop/Vjezba/anabalen_zadaca_1/src/foi/uzdiz/anabalen/abstractfactory/CanonEOS100D.java</file>
-            <file>file:/C:/Users/Ana-Marija/Desktop/Vjezba/anabalen_zadaca_1/src/MainClass.java</file>
-            <file>file:/C:/Users/Ana-Marija/Desktop/Vjezba/anabalen_zadaca_1/src/foi/uzdiz/anabalen/abstractfactory/DSLRFactory.java</file>
-            <file>file:/C:/Users/Ana-Marija/Desktop/Vjezba/anabalen_zadaca_1/src/foi/uzdiz/anabalen/abstractfactory/DSLMFactory.java</file>
-            <file>file:/C:/Users/Ana-Marija/Desktop/Vjezba/anabalen_zadaca_1/src/foi/uzdiz/anabalen/abstractfactory/CompactFactory.java</file>
-            <file>file:/C:/Users/Ana-Marija/Desktop/Vjezba/anabalen_zadaca_1/src/foi/uzdiz/anabalen/abstractfactory/AbstractFactory.java</file>
+            <file>file:/C:/Users/Ana-Marija/Desktop/uzorci_zadaca/src/foi/uzdiz/anabalen/zadaca1/abstractFactory/MainClass.java</file>
+            <file>file:/C:/Users/Ana-Marija/Desktop/uzorci_zadaca/src/foi/uzdiz/anabalen/zadaca1/abstractFactory/DSLMFactory.java</file>
+            <file>file:/C:/Users/Ana-Marija/Desktop/uzorci_zadaca/src/foi/uzdiz/anabalen/zadaca1/abstractFactory/Teme.java</file>
+            <file>file:/C:/Users/Ana-Marija/Desktop/uzorci_zadaca/src/foi/uzdiz/anabalen/zadaca1/abstractFactory/Natjecanje.java</file>
+            <file>file:/C:/Users/Ana-Marija/Desktop/uzorci_zadaca/src/foi/uzdiz/anabalen/zadaca1/abstractFactory/Photo.java</file>
         </group>
     </open-files>
 </project-private>

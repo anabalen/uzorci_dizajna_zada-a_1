@@ -14,6 +14,12 @@ import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
  */
 public class DSLMFactory extends AbstractFactory{
 
+    private String naziv = "";
+    private String objektiv = "";
+    private String zoom = "";
+    private boolean integriraniRukohvat = false;
+
+    
     @Override
     public DSLR getDSLR(String dslr) {
         return null;
@@ -37,6 +43,22 @@ public class DSLMFactory extends AbstractFactory{
         }
       
         return null;
+    }
+    
+    public void setNaziv(String naziv) {
+        this.naziv = naziv;
+    }
+    
+    public void setObjektiv(String objektiv) {
+        this.objektiv = objektiv;
+    }
+    
+    public void setZoom(String zoom) {
+        this.zoom = zoom;
+    }
+    
+    public void setIntegriraniRukohvat(boolean integriraniRukohvat) {
+        this.integriraniRukohvat = integriraniRukohvat;
     }
   
 

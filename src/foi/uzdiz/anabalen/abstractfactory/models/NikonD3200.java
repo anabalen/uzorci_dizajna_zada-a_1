@@ -1,6 +1,7 @@
 package foi.uzdiz.anabalen.abstractfactory.models;
 
 import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
+import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
 
 /**
  *
@@ -9,6 +10,15 @@ import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
 public class NikonD3200 implements DSLR {
     @Override
    public void makeDSLR() {
+       
+       DSLRFactory camera = new DSLRFactory();
+        camera.setNaziv("NikonD3200");
+        camera.setObjektiv("AF 18-105mm");
+        camera.setZoom("3x");
+        camera.setIntegriraniRukohvat(true);
+        camera.setIntegriraniBlic(true);
+        camera.setStabilizacijaSlike(false);
+        
       System.out.println("Inside Nikon::make() method.");
    }
     
