@@ -1,4 +1,9 @@
-package foi.uzdiz.anabalen.abstractfactory;
+package foi.uzdiz.anabalen.zadaca1.abstractFactory;
+
+import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
+import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLMFactory;
+import foi.uzdiz.anabalen.zadaca1.abstractFactory.CompactFactory;
+import foi.uzdiz.anabalen.zadaca1.abstractFactory.AbstractFactory;
 
 /**
  *

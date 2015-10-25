@@ -1,4 +1,6 @@
-package foi.uzdiz.anabalen.abstractfactory;
+package foi.uzdiz.anabalen.abstractfactory.models;
+
+import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
 
 /**
  *

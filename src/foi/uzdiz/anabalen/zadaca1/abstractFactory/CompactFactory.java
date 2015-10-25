@@ -1,4 +1,12 @@
-package foi.uzdiz.anabalen.abstractfactory;
+package foi.uzdiz.anabalen.zadaca1.abstractFactory;
+
+import foi.uzdiz.anabalen.zadaca1.abstractFactory.AbstractFactory;
+import foi.uzdiz.anabalen.abstractfactory.models.CanonIXUS170;
+import foi.uzdiz.anabalen.abstractfactory.models.NikonCoolPixS33;
+import foi.uzdiz.anabalen.abstractfactory.models.SonyDSC200W;
+import foi.uzdiz.anabalen.abstractfactory.interfaces.Compact;
+import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLM;
+import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
 
 /**
  *
@@ -12,7 +20,7 @@ public class CompactFactory extends AbstractFactory{
     }
 
     @Override
-    DSLM getDSLM(String dslm) {
+    public DSLM getDSLM(String dslm) {
         return null;
     }
 

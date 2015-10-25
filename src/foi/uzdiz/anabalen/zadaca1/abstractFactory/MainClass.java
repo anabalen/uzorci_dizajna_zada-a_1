@@ -1,9 +1,11 @@
+package foi.uzdiz.anabalen.zadaca1.abstractFactory;
 
-import foi.uzdiz.anabalen.abstractfactory.AbstractFactory;
-import foi.uzdiz.anabalen.abstractfactory.DSLM;
-import foi.uzdiz.anabalen.abstractfactory.DSLR;
-import foi.uzdiz.anabalen.abstractfactory.DSLRFactory;
-import foi.uzdiz.anabalen.abstractfactory.FactoryProducer;
+
+import foi.uzdiz.anabalen.zadaca1.abstractFactory.AbstractFactory;
+import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLM;
+import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
+import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
+import foi.uzdiz.anabalen.zadaca1.abstractFactory.FactoryProducer;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,20 +23,20 @@ public class MainClass {
       //get DSLR factory
       AbstractFactory dslrFactory = FactoryProducer.getFactory("DSLR");
 
-      //get an object of DSLR Canon
-      DSLR dslr1 = dslrFactory.getDSLR("CanonEOS700D");
+      DSLR dslr1;
+        dslr1 = dslrFactory.getDSLR("CanonEOS700D");
 
       //call draw method of Shape Circle
       dslr1.makeDSLR();
 
-      //get an object of Shape Rectangle
-      DSLR dslr2 = dslrFactory.getDSLR("NikonD3200");
+      DSLR dslr2;
+        dslr2 = dslrFactory.getDSLR("NikonD3200");
 
       //call draw method of Shape Rectangle
       dslr2.makeDSLR();
       
-      //get an object of Shape Square 
-      DSLR dslr3 = dslrFactory.getDSLR("CanonEOS100D");
+      DSLR dslr3;
+        dslr3 = dslrFactory.getDSLR("CanonEOS100D");
 
       //call draw method of Shape Square
       dslr3.makeDSLR();

@@ -1,4 +1,4 @@
-package foi.uzdiz.anabalen.abstractfactory;
+package foi.uzdiz.anabalen.abstractfactory.interfaces;
 
 /**
  *
