@@ -6,6 +6,7 @@ import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLM;
 import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.FactoryProducer;
+import java.util.Random;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,6 +20,27 @@ import foi.uzdiz.anabalen.zadaca1.abstractFactory.FactoryProducer;
  */
 public class MainClass {
     public static void main(String[] args) {
+        
+        int sjeme = Integer.parseInt(args[0]);
+        int maxBrTema = Integer.parseInt(args[1]);
+       /** int maxBrTemaNatjecatelj = Integer.parseInt(args[2]);
+        int maxBrKategorija = Integer.parseInt(args[3]);
+        int maxBrNatjecatelja = Integer.parseInt(args[4]);
+        int brClanovaZirija = Integer.parseInt(args[5]);
+        String klasaBodova = args[6];
+        String datoteka = args[7];
+        **/
+        
+        int brTema;
+        int brKategorija;
+        int brNatjecatelja;
+        
+        
+        Random rand = new Random(sjeme);
+        
+        brTema = rand.nextInt(maxBrTema-1)+1;
+        
+        System.out.println(brTema);
 
       //get DSLR factory
       AbstractFactory dslrFactory = FactoryProducer.getFactory("DSLR");
