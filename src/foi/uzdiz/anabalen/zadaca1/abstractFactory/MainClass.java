@@ -77,18 +77,8 @@ public class MainClass {
             brojTemaNatjecatelja = slucajnaTema.nextInt((brTema+1)-1)+1;
             temeZaNatjecatelja = new String[brojTemaNatjecatelja];            
             Set<Integer> indexiNatjecatelja = getIndexes(brojTemaNatjecatelja, brTema);
-            String[] noveTemeNatjecatelja = new String[brojTemaNatjecatelja];
-            
-            int y = 0;
-            for (Integer index : indexiNatjecatelja) {
-                if(y>brojTemaNatjecatelja-1){break;}
-                else{
-                    
-                    noveTemeNatjecatelja[y] = noveTeme[index-1];
-                    y++;
-                }
-            } 
-               
+            String[] noveTemeNatjecatelja = randomTeme(indexiNatjecatelja, brojTemaNatjecatelja, listaTema);
+                          
             natjecatelj.setTema(noveTemeNatjecatelja);
             System.out.println(indexiNatjecatelja);
             System.out.println(Arrays.toString(natjecatelj.getTema()));
