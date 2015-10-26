@@ -9,7 +9,7 @@ public class Natjecatelj {
   
     protected int rbrNatjecatelja;
     protected String[] tema;
-     protected String kategorijaFotoaparata;
+     protected String[] kategorijaFotoaparata;
 
      
      /**
@@ -27,11 +27,11 @@ public class Natjecatelj {
      * Getter i setter za kategoriju fotoaparata
      */
     
-    public void setKategorijaFotoaparata(String kategorijaFotoaparata) {
+    public void setKategorijaFotoaparata(String[] kategorijaFotoaparata) {
         this.kategorijaFotoaparata = kategorijaFotoaparata;
     }
 
-    public String getKategorijaFotoaparata() {
+    public String[] getKategorijaFotoaparata() {
         return kategorijaFotoaparata;
     }
     
