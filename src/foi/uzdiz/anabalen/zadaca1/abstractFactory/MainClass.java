@@ -58,7 +58,7 @@ public class MainClass {
         Set<Integer> indexi = getIndexes(brTema, listaTema.length - 1);
         String[] noveTeme = randomIzListe(indexi, brTema, listaTema);
         String[] kategorijeFotoaparata = kategorijaFotoaparata(3);
-        
+
         Random slucajnaTema = new Random();
         int brojTemaNatjecatelja;
         int brojTeme;
@@ -76,11 +76,13 @@ public class MainClass {
             String[] noveKategorijeFotoaparata = randomIzListe(indexiKategorijaFotoaparata, brKategorija + 1, kategorijeFotoaparata);
 
             
+            
+            
             int j;
             String[][] nTeme = new String[noveTemeNatjecatelja.length][noveKategorijeFotoaparata.length];
-            for (int y = 0; y < noveTemeNatjecatelja.length ; y++) {
-                for ( j = 0; j < noveKategorijeFotoaparata.length ; j++) {
-                    nTeme[y][j] = noveTemeNatjecatelja[y]+"  "+noveKategorijeFotoaparata[j];
+            for (int y = 0; y < noveTemeNatjecatelja.length; y++) {
+                for (j = 0; j < noveKategorijeFotoaparata.length; j++) {
+                    nTeme[y][j] = noveTemeNatjecatelja[y] + "  " + noveKategorijeFotoaparata[j];
                     System.out.println(nTeme[y][j]);
                 }
             }
@@ -95,47 +97,6 @@ public class MainClass {
             System.out.println(Arrays.toString(natjecatelj.getTema()));
 
         }
-        //get DSLR factory
-        AbstractFactory dslrFactory = FactoryProducer.getFactory("DSLR");
-
-        DSLR dslr1;
-        dslr1 = dslrFactory.getDSLR("CanonEOS700D");
-
-        //call draw method of Shape Circle
-        dslr1.makeDSLR();
-
-        DSLR dslr2;
-        dslr2 = dslrFactory.getDSLR("NikonD3200");
-
-        //call draw method of Shape Rectangle
-        dslr2.makeDSLR();
-
-        DSLR dslr3;
-        dslr3 = dslrFactory.getDSLR("CanonEOS100D");
-
-        //call draw method of Shape Square
-        dslr3.makeDSLR();
-
-        //get color factory
-        AbstractFactory dslmFactory = FactoryProducer.getFactory("DSLM");
-
-        //get an object of Color Red
-        DSLM dslm1 = dslmFactory.getDSLM("LumixG6H");
-
-        //call fill method of Red
-        dslm1.makeDSLM();
-
-        //get an object of Color Green
-        DSLM dslm2 = dslmFactory.getDSLM("OlympusEM10");
-
-        //call fill method of Green
-        dslm2.makeDSLM();
-
-        //get an object of Color Blue
-        DSLM dslm3 = dslmFactory.getDSLM("SonyA5000");
-
-        //call fill method of Color Blue
-        dslm3.makeDSLM();
     }
 
     /**
