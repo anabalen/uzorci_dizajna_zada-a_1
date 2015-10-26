@@ -52,7 +52,7 @@ public class MainClass {
         Natjecanje natjecaj = Natjecanje.getInstance();
        // System.out.println(natjecaj + "objekt");
         Teme tema = new Teme();
-        String[] listaTema = new String[10];
+        String[] listaTema = listaTema();
         listaTema[0] = "portret";
         listaTema[1] = "priroda";
         listaTema[2] = "makro";
@@ -166,5 +166,21 @@ public class MainClass {
             }
         } 
         return noveTeme;
+    }
+    
+    public static String[] listaTema(){
+        String[] listaTema = new String[10];
+         listaTema[0] = "portret";
+        listaTema[1] = "priroda";
+        listaTema[2] = "makro";
+        listaTema[3] = "sport";
+        listaTema[4] = "montaža";
+        listaTema[5] = "čovjek";
+        listaTema[6] = "grad";
+        listaTema[7] = "ljubav";
+        listaTema[8] = "djeca";
+        listaTema[9] = "zdravlje";
+        
+        return listaTema;
     }
 }
