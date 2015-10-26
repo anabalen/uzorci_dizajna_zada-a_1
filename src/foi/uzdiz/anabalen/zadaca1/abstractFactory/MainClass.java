@@ -22,33 +22,8 @@ public class MainClass {
 
     public static void main(String[] args) {
 
-           //inicijalizacija varijabli
-        int sjeme = Integer.parseInt(args[0]);
-        int maxBrTema = Integer.parseInt(args[1]);
-        int maxBrTemaNatjecatelj = Integer.parseInt(args[2]);
-        int maxBrKategorija = Integer.parseInt(args[3]);
-        int maxBrNatjecatelja = Integer.parseInt(args[4]);
-        /**
-         * int brClanovaZirija = Integer.parseInt(args[5]); String klasaBodova =
-         * args[6]; String datoteka = args[7];
-         *
-         */
-        int brTema;
-        int brKategorija;
-        int brNatjecatelja;
-        int brTemaPoNatjecatelju;
-        Random rand = new Random(sjeme);
-          //random generiranje broja tema, kateorija...
-        brTema = rand.nextInt(maxBrTema - 1) + 1;
-        brKategorija = rand.nextInt(maxBrKategorija - 1) + 1;
-        brTemaPoNatjecatelju = rand.nextInt(maxBrTemaNatjecatelj - 1) + 1;
-        brNatjecatelja = rand.nextInt(maxBrNatjecatelja - 0) + 0;
-
-        System.out.println(brTema);
-        System.out.println(brKategorija);
-        System.out.println(brTemaPoNatjecatelju);
-        System.out.println(brNatjecatelja);
-
+        randGeneriranjePodataka(args);
+        
         Natjecanje natjecaj = Natjecanje.getInstance();
        // System.out.println(natjecaj + "objekt");
         Teme tema = new Teme();
@@ -160,5 +135,33 @@ public class MainClass {
         
         return indexi;
     }
+    public static void randGeneriranjePodataka(String[] args)
+    {
+           //inicijalizacija varijabli
+        int sjeme = Integer.parseInt(args[0]);
+        int maxBrTema = Integer.parseInt(args[1]);
+        int maxBrTemaNatjecatelj = Integer.parseInt(args[2]);
+        int maxBrKategorija = Integer.parseInt(args[3]);
+        int maxBrNatjecatelja = Integer.parseInt(args[4]);
+        /**
+         * int brClanovaZirija = Integer.parseInt(args[5]); String klasaBodova =
+         * args[6]; String datoteka = args[7];
+         *
+         */
+        int brTema;
+        int brKategorija;
+        int brNatjecatelja;
+        int brTemaPoNatjecatelju;
+        Random rand = new Random(sjeme);
+          //random generiranje broja tema, kateorija...
+        brTema = rand.nextInt(maxBrTema - 1) + 1;
+        brKategorija = rand.nextInt(maxBrKategorija - 1) + 1;
+        brTemaPoNatjecatelju = rand.nextInt(maxBrTemaNatjecatelj - 1) + 1;
+        brNatjecatelja = rand.nextInt(maxBrNatjecatelja - 0) + 0;
 
+        System.out.println(brTema);
+        System.out.println(brKategorija);
+        System.out.println(brTemaPoNatjecatelju);
+        System.out.println(brNatjecatelja);
+    }
 }
