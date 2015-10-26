@@ -22,7 +22,32 @@ public class MainClass {
 
     public static void main(String[] args) {
 
-        randGeneriranjePodataka(args);
+           //inicijalizacija varijabli
+        int sjeme = Integer.parseInt(args[0]);
+        int maxBrTema = Integer.parseInt(args[1]);
+        int maxBrTemaNatjecatelj = Integer.parseInt(args[2]);
+        int maxBrKategorija = Integer.parseInt(args[3]);
+        int maxBrNatjecatelja = Integer.parseInt(args[4]);
+        /**
+         * int brClanovaZirija = Integer.parseInt(args[5]); String klasaBodova =
+         * args[6]; String datoteka = args[7];
+         *
+         */
+        int brTema;
+        int brKategorija;
+        int brNatjecatelja;
+        int brTemaPoNatjecatelju;
+        Random rand = new Random(sjeme);
+          //random generiranje broja tema, kateorija...
+        brTema = rand.nextInt(maxBrTema - 1) + 1;
+        brKategorija = rand.nextInt(maxBrKategorija - 1) + 1;
+        brTemaPoNatjecatelju = rand.nextInt(maxBrTemaNatjecatelj - 1) + 1;
+        brNatjecatelja = rand.nextInt(maxBrNatjecatelja - 0) + 0;
+
+        System.out.println(brTema);
+        System.out.println(brKategorija);
+        System.out.println(brTemaPoNatjecatelju);
+        System.out.println(brNatjecatelja);
         
         Natjecanje natjecaj = Natjecanje.getInstance();
        // System.out.println(natjecaj + "objekt");
@@ -40,16 +65,8 @@ public class MainClass {
         listaTema[9] = "zdravlje";
 
         Set<Integer> indexi = getIndexes(brTema,listaTema.length-1);
-        String[] noveTeme = new String[brTema];
-        int x = 0;
-        for (Integer index : indexi) {
-            if(x>brTema-1){break;}
-            else{
-                noveTeme[x] = listaTema[index];
-                //System.out.println(noveTeme[x]+" "+ x); 
-                x++;
-            }
-        } 
+        String[] noveTeme = randomTeme(indexi, brTema, listaTema);
+        
           
         Random slucajnaTema = new Random();
         int brojTemaNatjecatelja;
@@ -137,31 +154,27 @@ public class MainClass {
     }
     public static void randGeneriranjePodataka(String[] args)
     {
-           //inicijalizacija varijabli
-        int sjeme = Integer.parseInt(args[0]);
-        int maxBrTema = Integer.parseInt(args[1]);
-        int maxBrTemaNatjecatelj = Integer.parseInt(args[2]);
-        int maxBrKategorija = Integer.parseInt(args[3]);
-        int maxBrNatjecatelja = Integer.parseInt(args[4]);
-        /**
-         * int brClanovaZirija = Integer.parseInt(args[5]); String klasaBodova =
-         * args[6]; String datoteka = args[7];
-         *
-         */
-        int brTema;
-        int brKategorija;
-        int brNatjecatelja;
-        int brTemaPoNatjecatelju;
-        Random rand = new Random(sjeme);
-          //random generiranje broja tema, kateorija...
-        brTema = rand.nextInt(maxBrTema - 1) + 1;
-        brKategorija = rand.nextInt(maxBrKategorija - 1) + 1;
-        brTemaPoNatjecatelju = rand.nextInt(maxBrTemaNatjecatelj - 1) + 1;
-        brNatjecatelja = rand.nextInt(maxBrNatjecatelja - 0) + 0;
-
-        System.out.println(brTema);
-        System.out.println(brKategorija);
-        System.out.println(brTemaPoNatjecatelju);
-        System.out.println(brNatjecatelja);
+        
+    }
+    /**
+     * lista tema prema odabranim random indexima
+     * @param indexi
+     * @param brTema
+     * @param listaTema
+     * @return 
+     */
+    public static String[] randomTeme(Set<Integer> indexi, int brTema, String[] listaTema)
+    {   
+        String[] noveTeme = new String[brTema];
+        int x = 0;
+        for (Integer index : indexi) {
+            if(x>brTema-1){break;}
+            else{
+                noveTeme[x] = listaTema[index];
+                //System.out.println(noveTeme[x]+" "+ x); 
+                x++;
+            }
+        } 
+        return noveTeme;
     }
 }
