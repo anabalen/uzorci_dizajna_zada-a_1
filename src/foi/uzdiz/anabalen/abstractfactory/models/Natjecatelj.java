@@ -6,47 +6,45 @@ package foi.uzdiz.anabalen.abstractfactory.models;
  */
 
 public class Natjecatelj {
-    /**
-     * String naziv
-     */
-    protected String naziv;
-    /**
-     * String tema
-     */
+  
+    protected int rbrNatjecatelja;
     protected String[] tema;
+     protected String kategorijaFotoaparata;
 
+     
+     /**
+     * Getter i setter za teme
+     */
     public void setTema(String[] tema) {
         this.tema = tema;
     }
-
-    public void setKategorijaFotoaparata(String kategorijaFotoaparata) {
-        this.kategorijaFotoaparata = kategorijaFotoaparata;
-    }
-
     public String[] getTema() {
         return tema;
+    }
+
+    
+    /**
+     * Getter i setter za kategoriju fotoaparata
+     */
+    
+    public void setKategorijaFotoaparata(String kategorijaFotoaparata) {
+        this.kategorijaFotoaparata = kategorijaFotoaparata;
     }
 
     public String getKategorijaFotoaparata() {
         return kategorijaFotoaparata;
     }
+    
+    
     /**
-     * String kategorijaFotoaparata
+     * Getter i setter za redni broj natjecatelja
      */
-    protected String kategorijaFotoaparata;
-    /**
-     * Set natjecatelja
-     * @param naziv 
-     */
-    public void setNatjecatelj(String naziv)
+    public void setNatjecatelj(int rednibroj)
     {
-        this.naziv=naziv;    
+        this.rbrNatjecatelja=rednibroj;    
     }
-    /**
-     * Get natjecatelj
-     * @return 
-     */
-    public String getNatjecatelj(){  
-        return this.naziv;
+ 
+    public int getNatjecatelj(){  
+        return this.rbrNatjecatelja;
     }
 }

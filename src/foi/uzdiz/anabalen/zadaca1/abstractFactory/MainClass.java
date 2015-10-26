@@ -78,9 +78,10 @@ public class MainClass {
             temeZaNatjecatelja = new String[brojTemaNatjecatelja];            
             Set<Integer> indexiNatjecatelja = getIndexes(brojTemaNatjecatelja, brTema);
             String[] noveTemeNatjecatelja = randomTeme(indexiNatjecatelja, brojTemaNatjecatelja, listaTema);
-                          
+            natjecatelj.setNatjecatelj(i+1);
+            
             natjecatelj.setTema(noveTemeNatjecatelja);
-            System.out.println(indexiNatjecatelja);
+            System.out.println(natjecatelj.getNatjecatelj());
             System.out.println(Arrays.toString(natjecatelj.getTema()));
         }
         //get DSLR factory
