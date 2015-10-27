@@ -95,6 +95,7 @@ public class MainClass {
             for(int j=0;j<noveKategorijeFotoaparata.length;j++)
             {
                 if(noveKategorijeFotoaparata[j] == "DSLR"){
+                    
                     DSLR[] test = new DSLR[noveKategorijeFotoaparata.length];
                     test[j] = randomIzListeFotoaparataDSLR(indexiKategorijaFotoaparata, brKategorija, noveKategorijeFotoaparata[j]);
                     System.out.println(Arrays.toString(test));
@@ -184,9 +185,11 @@ public class MainClass {
         
         AbstractFactory DSLRFactory = FactoryProducer.getFactory(vrsta);
         DSLR noviFotoaparati;
-        int fotoaparat= rng.nextInt(3 - 1) + 1;
+        int fotoaparat = rng.nextInt(3 - 1) + 1;
         noviFotoaparati = DSLRFactory.getDSLR(fotoaparat);
-                
+        
+        noviFotoaparati.makeDSLR();
+        
         return noviFotoaparati;
     }
     public static Compact randomIzListeFotoaparataCompact(Set<Integer> indexiKategorijaFotoaparata, int brKategorija, String vrsta )
@@ -198,6 +201,8 @@ public class MainClass {
         
             AbstractFactory CompactFactory = FactoryProducer.getFactory(vrsta);
             Compact noviFotoaparati = CompactFactory.getCompact(fotoaparat);
+            
+            noviFotoaparati.makeCompact();
         
                 
         return noviFotoaparati;
@@ -211,6 +216,7 @@ public class MainClass {
         AbstractFactory DSLMFactory = FactoryProducer.getFactory(vrsta);
         DSLM noviFotoaparati = DSLMFactory.getDSLM(fotoaparat);
         
+        noviFotoaparati.makeDSLM();
                 
         return noviFotoaparati;
     }
