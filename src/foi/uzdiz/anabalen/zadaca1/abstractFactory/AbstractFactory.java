@@ -15,8 +15,8 @@ public abstract class AbstractFactory {
      * @param dslr
      * @return
      */
-    abstract  DSLR getDSLR(String dslr);
-    abstract  DSLM getDSLM(String dslm);
-    abstract  Compact getCompact(String compact);
+    abstract  DSLR getDSLR(int dslr);
+    abstract  DSLM getDSLM(int dslm);
+    abstract  Compact getCompact(int compact);
     
 }

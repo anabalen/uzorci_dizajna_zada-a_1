@@ -21,24 +21,24 @@ public class DSLMFactory extends AbstractFactory{
 
     
     @Override
-    public DSLR getDSLR(String dslr) {
+    public DSLR getDSLR(int dslr) {
         return null;
     }
 
     @Override
-    public DSLM getDSLM(String dslm) {
+    public DSLM getDSLM(int dslm) {
         
-        if(dslm == null){
+        if(dslm == 0){
             return null;
         }		
       
-        if(dslm.equalsIgnoreCase("LumixG6H")){
+        if(dslm == 1){
             return new LUMIXG6H();
          
-        }else if(dslm.equalsIgnoreCase("OlympusEM10")){
+        }else if(dslm == 2){
             return new OLYMPUSEM10();
          
-        }else if(dslm.equalsIgnoreCase("SonyA5000")){
+        }else if(dslm == 3){
             return new SonyA5000();
         }
       
@@ -63,7 +63,7 @@ public class DSLMFactory extends AbstractFactory{
   
 
     @Override
-    public Compact getCompact(String compact) {
+    public Compact getCompact(int compact) {
         return null;
     }
     

@@ -7,8 +7,16 @@ package foi.uzdiz.anabalen.abstractfactory.models;
 public class Teme {
     
     protected String naziv;
+    protected Kategorija kategorija;
     
+    public void setKategorija(Kategorija kategorija) {
+        this.kategorija = kategorija;
+    }
     
+    public Kategorija getKategorija() {
+        return kategorija;
+    }
+
     
     public void setTema(String naziv)
     {

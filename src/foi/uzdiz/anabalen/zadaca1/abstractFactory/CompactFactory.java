@@ -19,28 +19,28 @@ public class CompactFactory extends AbstractFactory{
     private boolean okular = false;
     
     @Override
-    public DSLR getDSLR(String dslr) {
+    public DSLR getDSLR(int dslr) {
         return null;
     }
 
     @Override
-    public DSLM getDSLM(String dslm) {
+    public DSLM getDSLM(int dslm) {
         return null;
     }
 
     @Override
-     public Compact getCompact(String compact) {
-        if(compact == null){
+     public Compact getCompact(int compact) {
+        if(compact == 0){
             return null;
         }		
       
-        if(compact.equalsIgnoreCase("NikonCoolPixS33")){
+        if(compact == 1){
             return new NikonCoolPixS33();
          
-        }else if(compact.equalsIgnoreCase("SonyDSC200W")){
+        }else if(compact == 2){
             return new SonyDSC200W();
          
-        }else if(compact.equalsIgnoreCase("CanonIXUS170")){
+        }else if(compact == 3 ){
             return new CanonIXUS170();
         }
       

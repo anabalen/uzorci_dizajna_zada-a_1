@@ -14,7 +14,7 @@ import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
  * @author mario
  */
 public class CreateCameras {
-    
+  /*  
     public void createCameras(){
      //get DSLR factory
         AbstractFactory dslrFactory = FactoryProducer.getFactory("DSLR");
@@ -76,5 +76,5 @@ public class CreateCameras {
         
         //call make method of DSLM camera3
         compact3.makeCompact();
-    }
+   }*/ 
 }

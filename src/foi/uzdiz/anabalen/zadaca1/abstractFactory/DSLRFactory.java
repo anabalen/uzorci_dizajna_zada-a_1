@@ -22,19 +22,19 @@ public class DSLRFactory extends AbstractFactory {
     private boolean stabilizacijaSlike = false;
 
     @Override
-    public DSLR getDSLR(String dslr) {
+    public DSLR getDSLR(int dslr) {
 
-        if (dslr == null) {
+        if (dslr == 0) {
             return null;
         }
 
-        if (dslr.equalsIgnoreCase("CanonEOS700D")) {
+        if (dslr == 1) {
             return new CanonEOS700D();
 
-        } else if (dslr.equalsIgnoreCase("NikonD3200")) {
+        } else if (dslr == 2) {
             return new NikonD3200();
 
-        } else if (dslr.equalsIgnoreCase("CanonEOS100D")) {
+        } else if (dslr == 3) {
             return new CanonEOS100D();
         }
 
@@ -66,12 +66,12 @@ public class DSLRFactory extends AbstractFactory {
     }
 
     @Override
-    public DSLM getDSLM(String dslm) {
+    public DSLM getDSLM(int dslm) {
         return null;
     }
 
     @Override
-    public Compact getCompact(String compact) {
+    public Compact getCompact(int compact) {
         return null;
     }
 
