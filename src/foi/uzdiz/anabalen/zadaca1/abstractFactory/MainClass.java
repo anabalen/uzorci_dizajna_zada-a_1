@@ -10,7 +10,9 @@ import foi.uzdiz.anabalen.abstractfactory.models.Natjecanje;
 import foi.uzdiz.anabalen.abstractfactory.models.Teme;
 import foi.uzdiz.anabalen.abstractfactory.models.Natjecatelj;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
@@ -92,6 +94,9 @@ public class MainClass {
             
            System.out.println(Arrays.toString(tema.getKategorija().getKategorija())); 
             
+           Map<String, String[]> aMap = new HashMap<String, String[]>();
+            aMap.put("tema" , noveTemeNatjecatelja);
+            System.out.println(Arrays.toString(aMap.get("tema")));
             for(int j=0;j<noveKategorijeFotoaparata.length;j++)
             {
                 if(noveKategorijeFotoaparata[j] == "DSLR"){
