@@ -1,6 +1,10 @@
 package foi.uzdiz.anabalen.zadaca1.abstractFactory;
 
+import static com.sun.org.apache.regexp.internal.RETest.test;
+import foi.uzdiz.anabalen.abstractfactory.interfaces.Compact;
+import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLM;
 import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
+import foi.uzdiz.anabalen.abstractfactory.models.Fotoaparat;
 import foi.uzdiz.anabalen.abstractfactory.models.Kategorija;
 import foi.uzdiz.anabalen.abstractfactory.models.Natjecanje;
 import foi.uzdiz.anabalen.abstractfactory.models.Teme;
@@ -82,15 +86,34 @@ public class MainClass {
             
           //  kategorija.setKategorija(noveKategorijeFotoaparata[i]);
        //     kategorija.setFotoaparat(noviFotoaparati);
-            System.out.println(Arrays.toString(noveKategorijeFotoaparata));
-       
-            DSLR test = randomIzListeFotoaparataDSLR(indexiKategorijaFotoaparata, brKategorija, "DSLR");
-            System.out.println(test);
-      //      tema.setTema(noveTemeNatjecatelja[i]);
+            
+            kategorija.setKategorija(noveKategorijeFotoaparata);
             tema.setKategorija(kategorija);
             
-           
+           System.out.println(Arrays.toString(tema.getKategorija().getKategorija())); 
             
+            for(int j=0;j<noveKategorijeFotoaparata.length;j++)
+            {
+                if(noveKategorijeFotoaparata[j] == "DSLR"){
+                    DSLR[] test = new DSLR[noveKategorijeFotoaparata.length];
+                    test[j] = randomIzListeFotoaparataDSLR(indexiKategorijaFotoaparata, brKategorija, noveKategorijeFotoaparata[j]);
+                    System.out.println(Arrays.toString(test));
+                }
+                if(noveKategorijeFotoaparata[j] == "DSLM"){
+                    DSLM[] test = new DSLM[noveKategorijeFotoaparata.length];
+                    test[j] = randomIzListeFotoaparataDSLM(indexiKategorijaFotoaparata, brKategorija, noveKategorijeFotoaparata[j]);
+                }
+                if(noveKategorijeFotoaparata[j] == "Compact"){
+                    Compact[] test = new Compact[noveKategorijeFotoaparata.length];
+                    test[j] = randomIzListeFotoaparataCompact(indexiKategorijaFotoaparata, brKategorija, noveKategorijeFotoaparata[j]);
+                }
+                
+            }
+            
+            
+      //      tema.setTema(noveTemeNatjecatelja[i]);
+            
+       
             int j;
             String[][] nTeme = new String[noveTemeNatjecatelja.length][noveKategorijeFotoaparata.length];
            /* for (int y = 0; y < noveTemeNatjecatelja.length; y++) {
@@ -102,9 +125,8 @@ public class MainClass {
             
             Natjecatelj natjecatelj = new Natjecatelj(i+1, tema);
             
-            System.out.println(natjecatelj.getNatjecatelj());
-            System.out.println(natjecatelj.getTema().getTeme());
-            String[] fotoaparati = natjecatelj.getTema().getKategorija().getFotoaparat();
+            
+          //  Fotoaparat fotoaparati = natjecatelj.getTema().getKategorija().setFotoaparat();
             
             
        //     System.out.println(Arrays.toString({'asd':'a'}));
@@ -159,10 +181,37 @@ public class MainClass {
     {
         int x = 0;
         Random rng = new Random();
-        int fotoaparat= rng.nextInt(3 - 1) + 1;
-        AbstractFactory DSLRFactory = FactoryProducer.getFactory(vrsta);
-        DSLR noviFotoaparati = DSLRFactory.getDSLR(fotoaparat);
         
+        AbstractFactory DSLRFactory = FactoryProducer.getFactory(vrsta);
+        DSLR noviFotoaparati;
+        int fotoaparat= rng.nextInt(3 - 1) + 1;
+        noviFotoaparati = DSLRFactory.getDSLR(fotoaparat);
+                
+        return noviFotoaparati;
+    }
+    public static Compact randomIzListeFotoaparataCompact(Set<Integer> indexiKategorijaFotoaparata, int brKategorija, String vrsta )
+    {
+        int x = 0;
+        Random rng = new Random();
+        int fotoaparat= rng.nextInt(3 - 1) + 1;
+        
+        
+            AbstractFactory CompactFactory = FactoryProducer.getFactory(vrsta);
+            Compact noviFotoaparati = CompactFactory.getCompact(fotoaparat);
+        
+                
+        return noviFotoaparati;
+    }
+    public static DSLM randomIzListeFotoaparataDSLM(Set<Integer> indexiKategorijaFotoaparata, int brKategorija, String vrsta )
+    {
+        int x = 0;
+        Random rng = new Random();
+        int fotoaparat= rng.nextInt(3 - 1) + 1;
+        
+        AbstractFactory DSLMFactory = FactoryProducer.getFactory(vrsta);
+        DSLM noviFotoaparati = DSLMFactory.getDSLM(fotoaparat);
+        
+                
         return noviFotoaparati;
     }
     /**

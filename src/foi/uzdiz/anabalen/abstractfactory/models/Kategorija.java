@@ -10,23 +10,22 @@ package foi.uzdiz.anabalen.abstractfactory.models;
  * @author mario
  */
 public class Kategorija {
-    protected String kategorija;
+    protected String[] kategorija;
+    protected Fotoaparat fotoaparat;
 
-    public void setKategorija(String kategorija) {
+    public void setKategorija(String[] kategorija) {
         this.kategorija = kategorija;
     }
 
-    public String getKategorija() {
+    public String[] getKategorija() {
         return kategorija;
     }
-    protected String[] fotoaparat;
-
     
-    public void setFotoaparat(String[] fotoaparat) {
+    public void setFotoaparat(Fotoaparat fotoaparat) {
         this.fotoaparat = fotoaparat;
     }
 
-    public String[] getFotoaparat() {
+    public Fotoaparat getFotoaparat() {
         return fotoaparat;
     }
     
