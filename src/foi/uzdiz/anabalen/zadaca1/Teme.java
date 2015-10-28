@@ -1,4 +1,6 @@
-package foi.uzdiz.anabalen.abstractfactory.models;
+package foi.uzdiz.anabalen.zadaca1;
+
+import foi.uzdiz.anabalen.zadaca1.Kategorija;
 
 /**
  *

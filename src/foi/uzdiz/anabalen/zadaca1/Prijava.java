@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package foi.uzdiz.anabalen.abstractfactory.models;
+package foi.uzdiz.anabalen.zadaca1;
 
-import foi.uzdiz.anabalen.abstractfactory.interfaces.Fotoaparat;
+import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.AbstractFactory;
 import java.util.Random;
 
@@ -19,13 +19,9 @@ public class Prijava {
     private String tema;
     private String kategorija;
     public Fotoaparat fotic;
-    private String fotografija;
+    private int fotografija;
 
-    /*public Prijava(AbstractFactory factory){
-     Fotoaparat fotoaparat = factory.makeCamera();
-     fotoaparat.make();
-     }
-     */
+    
     public Prijava(int brNatjecatelja, String tema, String kategorija, AbstractFactory factory) {
 
         this.brNatjecatelja = brNatjecatelja;
@@ -67,7 +63,7 @@ public class Prijava {
         return fotic;
     }
 
-    public String getFotografija() {
+    public int getFotografija() {
         return fotografija;
     }
 
@@ -87,7 +83,7 @@ public class Prijava {
         this.fotic = fotoaparat;
     }
 
-    public void setFotografija(String fotografija) {
+    public void setFotografija(int fotografija) {
         this.fotografija = fotografija;
     }
 

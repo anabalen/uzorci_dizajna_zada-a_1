@@ -1,6 +1,6 @@
 package foi.uzdiz.anabalen.zadaca1.abstractFactory;
 
-import foi.uzdiz.anabalen.abstractfactory.interfaces.Fotoaparat;
+import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
 
 
 /**

@@ -1,4 +1,4 @@
-package foi.uzdiz.anabalen.abstractfactory.models;
+package foi.uzdiz.anabalen.zadaca1.singleton;
 
 /**
  *
