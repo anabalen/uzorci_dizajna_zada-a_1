@@ -1,17 +1,17 @@
 package foi.uzdiz.anabalen.zadaca1.abstractFactory;
 
 import static com.sun.org.apache.regexp.internal.RETest.test;
-import foi.uzdiz.anabalen.abstractfactory.interfaces.Compact;
-import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLM;
-import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
-import foi.uzdiz.anabalen.abstractfactory.models.Fotoaparat;
+
 import foi.uzdiz.anabalen.abstractfactory.models.Kategorija;
 import foi.uzdiz.anabalen.abstractfactory.models.Natjecanje;
 import foi.uzdiz.anabalen.abstractfactory.models.Teme;
 import foi.uzdiz.anabalen.abstractfactory.models.Natjecatelj;
+import foi.uzdiz.anabalen.abstractfactory.models.Prijava;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
@@ -45,16 +45,23 @@ public class MainClass {
         int brNatjecatelja;
         int brTemaPoNatjecatelju;
         Random rand = new Random(sjeme);
+        
         //random generiranje broja tema, kateorija...
         brTema = rand.nextInt(maxBrTema - 1) + 1;
-        brKategorija = rand.nextInt(maxBrKategorija - 1) + 1;
-        brTemaPoNatjecatelju = rand.nextInt(maxBrTemaNatjecatelj - 1) + 1;
+        brKategorija = rand.nextInt((maxBrKategorija) - 1) + 1;
+        
+        if(brTema > maxBrTemaNatjecatelj){
+        brTemaPoNatjecatelju = rand.nextInt(maxBrTemaNatjecatelj - 1) + 1;}
+        else {brTemaPoNatjecatelju = rand.nextInt(brTema+1 - 1) + 1;}
+        
         brNatjecatelja = rand.nextInt(maxBrNatjecatelja - 0) + 0;
+        
 
-        System.out.println(brTema);
-        System.out.println(brKategorija);
-        System.out.println(brTemaPoNatjecatelju);
-        System.out.println(brNatjecatelja);
+        System.out.println("Broj tema: " + brTema);
+        System.out.println("Broj kategorija: " + brKategorija);
+        System.out.println("Broj tema po natjecatelju: " + brTemaPoNatjecatelju);
+        System.out.println("Broj natjecatelja: " + brNatjecatelja);
+        System.out.println("");
 
         Natjecanje natjecaj = Natjecanje.getInstance();
         // System.out.println(natjecaj + "objekt");
@@ -70,17 +77,20 @@ public class MainClass {
         int brojTemaNatjecatelja;
         int brojTeme;
         String[] temeZaNatjecatelja;
+        
+        int i;
 
-        for (int i = 0; i < brNatjecatelja; i++) {
-            
-            brojTemaNatjecatelja = slucajnaTema.nextInt((brTema + 1) - 1) + 1;
+        for (i = 0; i < brNatjecatelja; i++) {
+
+            //generiranje broja temat po svakom natjecatelju
+            brojTemaNatjecatelja = slucajnaTema.nextInt((brTema) - 1) + 1;
             temeZaNatjecatelja = new String[brojTemaNatjecatelja];
 
             Set<Integer> indexiNatjecatelja = getIndexes(brojTemaNatjecatelja, brTema);
             String[] noveTemeNatjecatelja = randomIzListe(indexiNatjecatelja, brojTemaNatjecatelja, listaTema);
 
             Set<Integer> indexiKategorijaFotoaparata = getIndexes(brKategorija + 1, 3);
-            String[] noveKategorijeFotoaparata = randomIzListe(indexiKategorijaFotoaparata, brKategorija + 1, kategorijeFotoaparata);
+            String[] noveKategorijeFotoaparata = randomIzListe(indexiKategorijaFotoaparata, brKategorija, kategorijeFotoaparata);
 
             Set<Integer> indexiFotoaparata = getIndexes(brKategorija + 1, 3);
             
@@ -92,29 +102,29 @@ public class MainClass {
             kategorija.setKategorija(noveKategorijeFotoaparata);
             tema.setKategorija(kategorija);
             
-           System.out.println(Arrays.toString(tema.getKategorija().getKategorija())); 
+            System.out.println("Redni broj natjecatelja: " + (i+1)); //redni broj natjecatelja
+           System.out.println("Kategorije fotoaparata: " + Arrays.toString(tema.getKategorija().getKategorija())); 
             
            Map<String, String[]> aMap = new HashMap<String, String[]>();
+           aMap.size();
             aMap.put("tema" , noveTemeNatjecatelja);
-            System.out.println(Arrays.toString(aMap.get("tema")));
+            System.out.println("Teme: " + Arrays.toString(aMap.get("tema")));
+            System.out.println(noveTemeNatjecatelja.length);
+
             for(int j=0;j<noveKategorijeFotoaparata.length;j++)
             {
-                if(noveKategorijeFotoaparata[j] == "DSLR"){
-                    
-                    DSLR[] test = new DSLR[noveKategorijeFotoaparata.length];
-                    test[j] = randomIzListeFotoaparataDSLR(indexiKategorijaFotoaparata, brKategorija, noveKategorijeFotoaparata[j]);
-                    System.out.println(Arrays.toString(test));
-                }
-                if(noveKategorijeFotoaparata[j] == "DSLM"){
-                    DSLM[] test = new DSLM[noveKategorijeFotoaparata.length];
-                    test[j] = randomIzListeFotoaparataDSLM(indexiKategorijaFotoaparata, brKategorija, noveKategorijeFotoaparata[j]);
-                }
-                if(noveKategorijeFotoaparata[j] == "Compact"){
-                    Compact[] test = new Compact[noveKategorijeFotoaparata.length];
-                    test[j] = randomIzListeFotoaparataCompact(indexiKategorijaFotoaparata, brKategorija, noveKategorijeFotoaparata[j]);
-                }
+                String kategorijaPrijave = noveKategorijeFotoaparata[j];
+
+                 Prijava prijavaNatjecatelja = new Prijava(i+1, noveTemeNatjecatelja[i], noveKategorijeFotoaparata[j], (kreirajKonkretniFactory(kategorijaPrijave)));
                 
-            }
+                 
+                System.out.println(prijavaNatjecatelja.getBrNatjecatelja() + "  " + prijavaNatjecatelja.getTema() + "  " + prijavaNatjecatelja.getKategorija() + " " + prijavaNatjecatelja.getFotoaparat());
+                
+                System.out.println("");
+             }
+            
+            
+            
             
             
       //      tema.setTema(noveTemeNatjecatelja[i]);
@@ -130,14 +140,10 @@ public class MainClass {
             }*/
             
             Natjecatelj natjecatelj = new Natjecatelj(i+1, tema);
+            System.out.println(natjecatelj);
             
             
           //  Fotoaparat fotoaparati = natjecatelj.getTema().getKategorija().setFotoaparat();
-            
-            
-       //     System.out.println(Arrays.toString({'asd':'a'}));
-            
-
         }
     }
 
@@ -182,7 +188,7 @@ public class MainClass {
         }
         return noveTeme;
     }
-    
+    /*
     public static DSLR randomIzListeFotoaparataDSLR(Set<Integer> indexiKategorijaFotoaparata, int brKategorija, String vrsta )
     {
         int x = 0;
@@ -225,6 +231,9 @@ public class MainClass {
                 
         return noviFotoaparati;
     }
+    
+    */
+        
     /**
      *
      * @return
@@ -256,5 +265,17 @@ public class MainClass {
         kategorijaFotoaparata[1] = "DSLM";
         kategorijaFotoaparata[2] = "Compact";
         return kategorijaFotoaparata;
+    }
+  
+
+    private static AbstractFactory kreirajKonkretniFactory(String kategorijaFotoaparata) {
+
+        if(kategorijaFotoaparata.equals("DSLM")){
+            return new DSLMFactory();
+        }
+        else if(kategorijaFotoaparata == "DSLR"){
+            return new DSLRFactory();
+        }
+        else return new CompactFactory();
     }
 }

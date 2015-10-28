@@ -5,9 +5,6 @@
  */
 package foi.uzdiz.anabalen.zadaca1.abstractFactory;
 
-import foi.uzdiz.anabalen.abstractfactory.interfaces.Compact;
-import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLM;
-import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
 
 /**
  *

@@ -1,16 +1,18 @@
 package foi.uzdiz.anabalen.abstractfactory.models;
 
-import foi.uzdiz.anabalen.abstractfactory.interfaces.Compact;
+
+import foi.uzdiz.anabalen.abstractfactory.interfaces.Fotoaparat;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.CompactFactory;
 
 /**
  *
  * @author Ana-Marija
  */
-public class SonyDSC200W implements Compact{
+public class SonyDSC200W implements Fotoaparat{
+
 
     @Override
-    public void makeCompact() {
+    public void make() {
         
         CompactFactory camera = new CompactFactory();
         camera.setNaziv("Sony DSC-WX200B");

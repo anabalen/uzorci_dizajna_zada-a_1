@@ -1,16 +1,21 @@
 package foi.uzdiz.anabalen.abstractfactory.models;
 
-import foi.uzdiz.anabalen.abstractfactory.interfaces.Compact;
+
+import foi.uzdiz.anabalen.abstractfactory.interfaces.Fotoaparat;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.CompactFactory;
 
 /**
  *
  * @author Ana-Marija
  */
-public class CanonIXUS170 implements Compact
+public class CanonIXUS170 implements Fotoaparat
 {
+    
+    /**
+     *
+     */
     @Override
-    public void makeCompact() {
+    public void make() {
         
          CompactFactory camera = new CompactFactory();
         camera.setNaziv("Canon IXUS170");
@@ -19,5 +24,7 @@ public class CanonIXUS170 implements Compact
         
          System.out.println("Inside Canon::make() method.");
     }
+
+ 
     
 }

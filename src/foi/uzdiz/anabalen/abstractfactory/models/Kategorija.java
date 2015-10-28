@@ -11,7 +11,7 @@ package foi.uzdiz.anabalen.abstractfactory.models;
  */
 public class Kategorija {
     protected String[] kategorija;
-    protected Fotoaparat fotoaparat;
+   // protected Fotoaparat fotoaparat;
 
     public void setKategorija(String[] kategorija) {
         this.kategorija = kategorija;
@@ -21,6 +21,7 @@ public class Kategorija {
         return kategorija;
     }
     
+   /* 
     public void setFotoaparat(Fotoaparat fotoaparat) {
         this.fotoaparat = fotoaparat;
     }
@@ -28,6 +29,7 @@ public class Kategorija {
     public Fotoaparat getFotoaparat() {
         return fotoaparat;
     }
+    */
     
     
 }

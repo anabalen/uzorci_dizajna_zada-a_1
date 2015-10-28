@@ -1,16 +1,18 @@
 package foi.uzdiz.anabalen.abstractfactory.models;
 
-import foi.uzdiz.anabalen.abstractfactory.interfaces.Compact;
+
+import foi.uzdiz.anabalen.abstractfactory.interfaces.Fotoaparat;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.CompactFactory;
 
 /**
  *
  * @author Ana-Marija
  */
-public class NikonCoolPixS33 implements Compact{
+public class NikonCoolPixS33 implements Fotoaparat{
+
 
     @Override
-    public void makeCompact() {
+    public void make() {
         
         CompactFactory camera = new CompactFactory();
         camera.setNaziv("Nikon CoolPix S33");
@@ -19,6 +21,7 @@ public class NikonCoolPixS33 implements Compact{
         
         System.out.println("Inside Nikon::make() method.");
     }
+
     
     
 }

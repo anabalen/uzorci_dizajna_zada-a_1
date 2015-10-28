@@ -1,16 +1,18 @@
 package foi.uzdiz.anabalen.abstractfactory.models;
 
-import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLM;
+
+import foi.uzdiz.anabalen.abstractfactory.interfaces.Fotoaparat;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLMFactory;
 
 /**
  *
  * @author Ana-Marija
  */
-public class SonyA5000 implements DSLM{
+public class SonyA5000 implements Fotoaparat{
 
+   
     @Override
-    public void makeDSLM() {
+    public void make() {
         
          DSLMFactory camera = new DSLMFactory();
         camera.setNaziv("Sony A5000");

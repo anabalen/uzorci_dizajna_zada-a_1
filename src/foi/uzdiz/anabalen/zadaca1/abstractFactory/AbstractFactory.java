@@ -1,8 +1,7 @@
 package foi.uzdiz.anabalen.zadaca1.abstractFactory;
 
-import foi.uzdiz.anabalen.abstractfactory.interfaces.Compact;
-import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLM;
-import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
+import foi.uzdiz.anabalen.abstractfactory.interfaces.Fotoaparat;
+
 
 /**
  *
@@ -10,13 +9,20 @@ import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
  */
 public abstract class AbstractFactory {
     
-    /**
-     *
-     * @param dslr
-     * @return
-     */
-    abstract  DSLR getDSLR(int dslr);
-    abstract  DSLM getDSLM(int dslm);
-    abstract  Compact getCompact(int compact);
+    public abstract Fotoaparat makeCamera(int broj);
     
+    
+    public static AbstractFactory getFactory(String kategorija) {
+        
+    if (kategorija == "DSLR"){
+        return new DSLRFactory();
+    }
+    else if(kategorija == "DSLM"){
+        return new DSLMFactory();
+    }
+    else{
+        return new CompactFactory();
+    }
+    
+    }
 }

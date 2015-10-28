@@ -1,15 +1,16 @@
 package foi.uzdiz.anabalen.abstractfactory.models;
 
-import foi.uzdiz.anabalen.abstractfactory.interfaces.DSLR;
+
+import foi.uzdiz.anabalen.abstractfactory.interfaces.Fotoaparat;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
 
 /**
  *
  * @author Ana-Marija
  */
-public class NikonD3200 implements DSLR {
-    @Override
-   public void makeDSLR() {
+public class NikonD3200 implements Fotoaparat {
+
+   public void make() {
        
        DSLRFactory camera = new DSLRFactory();
         camera.setNaziv("NikonD3200");
