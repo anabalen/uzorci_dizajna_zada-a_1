@@ -15,11 +15,12 @@ import java.util.Random;
  */
 public class Prijava {
 
-    private int brNatjecatelja;
-    private String tema;
-    private String kategorija;
-    public Fotoaparat fotic;
-    private int fotografija;
+    protected int brNatjecatelja;
+    protected String tema;
+    protected String kategorija;
+    protected Fotoaparat fotic;
+    protected int fotografija;
+    protected AbstractFactory factory;
 
     
     public Prijava(int brNatjecatelja, String tema, String kategorija, AbstractFactory factory) {
@@ -27,6 +28,7 @@ public class Prijava {
         this.brNatjecatelja = brNatjecatelja;
         this.tema = tema;
         this.kategorija = kategorija;
+        this.factory = factory;
        
         //this.fotoaparat = fotoaparat;
         //Fotoaparat fotoaparat = factory.makeCamera();

@@ -1,7 +1,5 @@
 package foi.uzdiz.anabalen.zadaca1;
 
-import foi.uzdiz.anabalen.zadaca1.Kategorija;
-
 /**
  *
  * @author Ana-Marija
