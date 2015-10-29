@@ -23,6 +23,7 @@ public class Prijava {
     protected AbstractFactory factory;
     protected int korektnost;
 
+    public Prijava(){}
     public Prijava(int brNatjecatelja, String tema, String kategorija, AbstractFactory factory, int fotografija, int korektnost) {
 
         this.brNatjecatelja = brNatjecatelja;
@@ -31,7 +32,7 @@ public class Prijava {
         this.factory = factory;
         this.korektnost = korektnost;
         this.fotografija = fotografija;
-
+        
         //this.fotoaparat = fotoaparat;
         //Fotoaparat fotoaparat = factory.makeCamera();
         //this.fotografija = fotografija;

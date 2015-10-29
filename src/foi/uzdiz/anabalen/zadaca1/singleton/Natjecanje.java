@@ -1,5 +1,7 @@
 package foi.uzdiz.anabalen.zadaca1.singleton;
 
+import foi.uzdiz.anabalen.zadaca1.Prijava;
+
 /**
  *
  * @author Ana-Marija
@@ -9,10 +11,10 @@ package foi.uzdiz.anabalen.zadaca1.singleton;
 public class Natjecanje {
 
     private static volatile Natjecanje INSTANCE;
+    protected Prijava prijava;
     
-    
-    private Natjecanje() {
-    }
+    private Natjecanje() {}
+ 
     /**
      * Get instance
      * @return 
@@ -29,4 +31,11 @@ public class Natjecanje {
         }
         return INSTANCE;
     }
+    public Prijava init()
+    {
+        Prijava prijava = new Prijava();
+        return prijava;
+    }
+    
+    
 }

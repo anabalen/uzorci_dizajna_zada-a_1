@@ -78,7 +78,11 @@ public class MainClass {
 
         int i;
         int fotografija = 0;
-
+        
+        //kreiranje prijave unutar singletona natjecanje
+        Natjecanje singleton = Natjecanje.getInstance();
+        Prijava prijavaNatjecatelja = singleton.init();
+        
         for (i = 0; i < brNatjecatelja; i++) {
 
             //generiranje broja temat po svakom natjecatelju
@@ -116,8 +120,14 @@ public class MainClass {
                     fotografija++;
 
                     int korektnost = slucajniBroj.nextInt(21 - 0) + 0;
-
-                    Prijava prijavaNatjecatelja = new Prijava(i + 1, noveTemeNatjecatelja[y], noveKategorijeFotoaparata[j], (kreirajKonkretniFactory(kategorijaPrijave)), fotografija, korektnost);
+                                            
+                    switch(noveKategorijeFotoaparata[j])
+                    {
+                        case "DSLR":break;
+                        case "DSLM":break;
+                        case "Compact": break;
+                    }
+                    prijavaNatjecatelja = new Prijava(i + 1, noveTemeNatjecatelja[y], noveKategorijeFotoaparata[j], kreirajKonkretniFactory(kategorijaPrijave), fotografija, korektnost);
 
                     System.out.println(prijavaNatjecatelja.getBrNatjecatelja() + "  " + prijavaNatjecatelja.getTema() + "   " + prijavaNatjecatelja.getKategorija() + " " + prijavaNatjecatelja.getFotoaparat().getClass().getSimpleName()
                             + " " + "fotka" + prijavaNatjecatelja.getFotografija() + " " + prijavaNatjecatelja.getKorektnost());
@@ -142,6 +152,7 @@ public class MainClass {
 
             //  Fotoaparat fotoaparati = natjecatelj.getTema().getKategorija().setFotoaparat();
         }
+        
     }
 
     /**
