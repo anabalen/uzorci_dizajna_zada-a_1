@@ -23,13 +23,14 @@ public class Prijava {
     protected AbstractFactory factory;
     protected int korektnost;
 
-    public Prijava(int brNatjecatelja, String tema, String kategorija, AbstractFactory factory, int korektnost) {
+    public Prijava(int brNatjecatelja, String tema, String kategorija, AbstractFactory factory, int fotografija, int korektnost) {
 
         this.brNatjecatelja = brNatjecatelja;
         this.tema = tema;
         this.kategorija = kategorija;
         this.factory = factory;
         this.korektnost = korektnost;
+        this.fotografija = fotografija;
 
         //this.fotoaparat = fotoaparat;
         //Fotoaparat fotoaparat = factory.makeCamera();
@@ -40,6 +41,7 @@ public class Prijava {
 
         fotic = factory.makeCamera(redniBrojFotica);
         fotic.make();
+        
 
         
         
@@ -70,6 +72,8 @@ public class Prijava {
     public int getFotografija() {
         return fotografija;
     }
+    
+    
 
     public void setBrNatjecatelja(int brNatjecatelja) {
         this.brNatjecatelja = brNatjecatelja;

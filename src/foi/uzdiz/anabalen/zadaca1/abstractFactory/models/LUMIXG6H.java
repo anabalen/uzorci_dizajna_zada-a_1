@@ -12,7 +12,7 @@ public class LUMIXG6H implements Fotoaparat{
 
 
     @Override
-    public void make() {
+    public String make() {
         
          DSLMFactory camera = new DSLMFactory();
         camera.setNaziv("Lumix G DMC-G6H");
@@ -20,7 +20,7 @@ public class LUMIXG6H implements Fotoaparat{
         camera.setZoom("4x");
         camera.setIntegriraniRukohvat(true);
         
-        
+        return camera.getObjektiv();
      // System.out.println("Inside Lumix::make() method.");
     }
     

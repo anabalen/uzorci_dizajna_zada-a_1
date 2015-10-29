@@ -12,7 +12,7 @@ public class SonyA5000 implements Fotoaparat{
 
    
     @Override
-    public void make() {
+    public String make() {
         
          DSLMFactory camera = new DSLMFactory();
         camera.setNaziv("Sony A5000");
@@ -20,6 +20,8 @@ public class SonyA5000 implements Fotoaparat{
         camera.setZoom("3x");
         camera.setIntegriraniRukohvat(true);
         
+        
+        return camera.getObjektiv();
        // System.out.println("Inside Sony::make() method.");
     }
     

@@ -12,13 +12,15 @@ public class NikonCoolPixS33 implements Fotoaparat{
 
 
     @Override
-    public void make() {
+    public String make() {
         
         CompactFactory camera = new CompactFactory();
         camera.setNaziv("Nikon CoolPix S33");
         camera.setObjektiv("NIKKOR 4.1-12.3mm");
         camera.setOkular(false);
         
+        
+        return camera.getObjektiv();
        // System.out.println("Inside Nikon::make() method.");
     }
 

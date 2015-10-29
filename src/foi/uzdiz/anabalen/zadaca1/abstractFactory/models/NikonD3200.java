@@ -10,7 +10,8 @@ import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
  */
 public class NikonD3200 implements Fotoaparat {
 
-   public void make() {
+   @Override
+   public String make() {
        
        DSLRFactory camera = new DSLRFactory();
         camera.setNaziv("NikonD3200");
@@ -20,6 +21,7 @@ public class NikonD3200 implements Fotoaparat {
         camera.setIntegriraniBlic(true);
         camera.setStabilizacijaSlike(false);
         
+        return camera.getObjektiv();
      // System.out.println("Inside Nikon::make() method.");
    }
     

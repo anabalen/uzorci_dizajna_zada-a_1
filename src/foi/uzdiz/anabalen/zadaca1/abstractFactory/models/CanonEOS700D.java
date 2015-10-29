@@ -9,7 +9,7 @@ import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
  */
 public class CanonEOS700D implements Fotoaparat{
 
-   public void make() {
+   public String make() {
        
        DSLRFactory camera = new DSLRFactory();
         camera.setNaziv("CanonEOS700D");
@@ -18,6 +18,8 @@ public class CanonEOS700D implements Fotoaparat{
         camera.setIntegriraniRukohvat(true);
         camera.setIntegriraniBlic(false);
         camera.setStabilizacijaSlike(false);
+        
+        return camera.getObjektiv();
        
       //System.out.println("Inside Canon::make() method.");
    }

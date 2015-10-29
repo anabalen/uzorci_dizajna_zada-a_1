@@ -5,6 +5,7 @@ import foi.uzdiz.anabalen.zadaca1.abstractFactory.AbstractFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.CompactFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLMFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
+import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.SonyA5000;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -116,12 +117,14 @@ public class MainClass {
 
                     int korektnost = slucajniBroj.nextInt(21 - 0) + 0;
 
-                    Prijava prijavaNatjecatelja = new Prijava(i + 1, noveTemeNatjecatelja[y], noveKategorijeFotoaparata[j], (kreirajKonkretniFactory(kategorijaPrijave)), korektnost);
+                    Prijava prijavaNatjecatelja = new Prijava(i + 1, noveTemeNatjecatelja[y], noveKategorijeFotoaparata[j], (kreirajKonkretniFactory(kategorijaPrijave)), fotografija, korektnost);
 
                     System.out.println(prijavaNatjecatelja.getBrNatjecatelja() + "  " + prijavaNatjecatelja.getTema() + "   " + prijavaNatjecatelja.getKategorija() + " " + prijavaNatjecatelja.getFotoaparat().getClass().getSimpleName()
-                            + " " + "fotka" + fotografija + " " + prijavaNatjecatelja.getKorektnost());
+                            + " " + "fotka" + prijavaNatjecatelja.getFotografija() + " " + prijavaNatjecatelja.getKorektnost());
 
                     System.out.println("");
+                    
+                    
                 }
 
             }

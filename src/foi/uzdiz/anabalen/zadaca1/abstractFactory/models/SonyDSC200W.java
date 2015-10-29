@@ -12,13 +12,14 @@ public class SonyDSC200W implements Fotoaparat{
 
 
     @Override
-    public void make() {
+    public String make() {
         
         CompactFactory camera = new CompactFactory();
         camera.setNaziv("Sony DSC-WX200B");
         camera.setObjektiv("3.3-5.9mm");
         camera.setOkular(false);
         
+        return camera.getObjektiv();
        // System.out.println("Inside Sony::make() method.");
     }
     

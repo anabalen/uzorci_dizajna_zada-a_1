@@ -16,6 +16,8 @@ public class CompactFactory extends AbstractFactory {
     private String objektiv = "";
     private boolean okular = false;
 
+    
+    
     /*
      @Override
      public Compact getCompact(int compact) {
@@ -69,6 +71,7 @@ public class CompactFactory extends AbstractFactory {
     
         if (compact == 0) {
             return new CanonIXUS170();
+            
         }
 
         if (compact == 1) {

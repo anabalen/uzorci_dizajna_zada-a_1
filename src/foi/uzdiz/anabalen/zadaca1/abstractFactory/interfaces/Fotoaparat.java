@@ -6,5 +6,5 @@ package foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces;
  */
 public interface Fotoaparat {
    
-    public void make();
+    public String make();
 }

@@ -10,7 +10,7 @@ import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
 public class CanonEOS100D implements Fotoaparat {
     
     @Override
-    public void make() {
+    public String make() {
        
        DSLRFactory camera = new DSLRFactory();
         camera.setNaziv("CanonEOS100D");
@@ -20,6 +20,8 @@ public class CanonEOS100D implements Fotoaparat {
         camera.setIntegriraniBlic(true);
         camera.setStabilizacijaSlike(false);
                
+        
+        return camera.getObjektiv();
      // System.out.println("Inside Canon::make() method.");
    }
 

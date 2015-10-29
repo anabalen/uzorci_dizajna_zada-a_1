@@ -12,7 +12,7 @@ public class OLYMPUSEM10 implements Fotoaparat {
 
     
     @Override
-    public void make() {
+    public String make() {
         
          DSLMFactory camera = new DSLMFactory();
         camera.setNaziv("Olympus E-M10");
@@ -20,6 +20,8 @@ public class OLYMPUSEM10 implements Fotoaparat {
         camera.setZoom("3x");
         camera.setIntegriraniRukohvat(true);
         
+        
+        return camera.getObjektiv();
        //  System.out.println("Inside Olympus::make() method.");
     }
     
