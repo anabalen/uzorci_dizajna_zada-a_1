@@ -21,19 +21,19 @@ public class Prijava {
     protected Fotoaparat fotic;
     protected int fotografija;
     protected AbstractFactory factory;
+    protected int korektnost;
 
-    
-    public Prijava(int brNatjecatelja, String tema, String kategorija, AbstractFactory factory) {
+    public Prijava(int brNatjecatelja, String tema, String kategorija, AbstractFactory factory, int korektnost) {
 
         this.brNatjecatelja = brNatjecatelja;
         this.tema = tema;
         this.kategorija = kategorija;
         this.factory = factory;
-       
+        this.korektnost = korektnost;
+
         //this.fotoaparat = fotoaparat;
         //Fotoaparat fotoaparat = factory.makeCamera();
         //this.fotografija = fotografija;
-
         int redniBrojFotica;
         Random rndFotic = new Random();
         redniBrojFotica = rndFotic.nextInt(3 - 0) + 0;
@@ -41,6 +41,8 @@ public class Prijava {
         fotic = factory.makeCamera(redniBrojFotica);
         fotic.make();
 
+        
+        
     }
 
     /**
@@ -61,7 +63,7 @@ public class Prijava {
     }
 
     public Fotoaparat getFotoaparat() {
-        
+
         return fotic;
     }
 
@@ -87,6 +89,14 @@ public class Prijava {
 
     public void setFotografija(int fotografija) {
         this.fotografija = fotografija;
+    }
+
+    public int getKorektnost() {
+        return korektnost;
+    }
+
+    public void setKorektnost(int korektnost) {
+        this.korektnost = korektnost;
     }
 
 }

@@ -19,7 +19,7 @@ public class NikonCoolPixS33 implements Fotoaparat{
         camera.setObjektiv("NIKKOR 4.1-12.3mm");
         camera.setOkular(false);
         
-        System.out.println("Inside Nikon::make() method.");
+       // System.out.println("Inside Nikon::make() method.");
     }
 
     

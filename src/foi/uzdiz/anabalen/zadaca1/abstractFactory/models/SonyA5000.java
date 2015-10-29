@@ -20,7 +20,7 @@ public class SonyA5000 implements Fotoaparat{
         camera.setZoom("3x");
         camera.setIntegriraniRukohvat(true);
         
-        System.out.println("Inside Sony::make() method.");
+       // System.out.println("Inside Sony::make() method.");
     }
     
 }

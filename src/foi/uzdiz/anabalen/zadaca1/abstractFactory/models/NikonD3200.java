@@ -20,7 +20,7 @@ public class NikonD3200 implements Fotoaparat {
         camera.setIntegriraniBlic(true);
         camera.setStabilizacijaSlike(false);
         
-      System.out.println("Inside Nikon::make() method.");
+     // System.out.println("Inside Nikon::make() method.");
    }
     
 }

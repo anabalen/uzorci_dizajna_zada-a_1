@@ -19,7 +19,7 @@ public class SonyDSC200W implements Fotoaparat{
         camera.setObjektiv("3.3-5.9mm");
         camera.setOkular(false);
         
-        System.out.println("Inside Sony::make() method.");
+       // System.out.println("Inside Sony::make() method.");
     }
     
 }

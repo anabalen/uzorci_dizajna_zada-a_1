@@ -20,7 +20,7 @@ public class CanonEOS100D implements Fotoaparat {
         camera.setIntegriraniBlic(true);
         camera.setStabilizacijaSlike(false);
                
-      System.out.println("Inside Canon::make() method.");
+     // System.out.println("Inside Canon::make() method.");
    }
 
     

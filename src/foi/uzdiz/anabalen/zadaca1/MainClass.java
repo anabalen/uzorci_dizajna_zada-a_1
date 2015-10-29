@@ -32,9 +32,8 @@ public class MainClass {
         int maxBrKategorija = Integer.parseInt(args[3]);
         int maxBrNatjecatelja = Integer.parseInt(args[4]);
         /**
-         * int brClanovaZirija = Integer.parseInt(args[5]); 
-         * String klasaBodova = args[6]; 
-         * String datoteka = args[7];
+         * int brClanovaZirija = Integer.parseInt(args[5]); String klasaBodova =
+         * args[6]; String datoteka = args[7];
          *
          */
         int brTema;
@@ -50,7 +49,7 @@ public class MainClass {
         if (brTema > maxBrTemaNatjecatelj) {
             brTemaPoNatjecatelju = rand.nextInt(maxBrTemaNatjecatelj - 1) + 1;
         } else {
-            brTemaPoNatjecatelju = rand.nextInt(brTema + 1 - 1) + 1;
+            brTemaPoNatjecatelju = rand.nextInt((brTema + 1) - 1) + 1;
         }
 
         brNatjecatelja = rand.nextInt(maxBrNatjecatelja - 0) + 0;
@@ -71,7 +70,7 @@ public class MainClass {
         //String[] noveTeme = randomIzListe(indexi, brTema, listaTema);
         String[] kategorijeFotoaparata = kategorijaFotoaparata(3);
 
-        Random slucajnaTema = new Random();
+        Random slucajniBroj = new Random();
         int brojTemaNatjecatelja;
         int brojTeme;
         String[] temeZaNatjecatelja;
@@ -82,7 +81,7 @@ public class MainClass {
         for (i = 0; i < brNatjecatelja; i++) {
 
             //generiranje broja temat po svakom natjecatelju
-            brojTemaNatjecatelja = slucajnaTema.nextInt((brTema) - 1) + 1;
+            brojTemaNatjecatelja = slucajniBroj.nextInt((brTema) - 1) + 1;
             temeZaNatjecatelja = new String[brojTemaNatjecatelja];
 
             Set<Integer> indexiNatjecatelja = getIndexes(brojTemaNatjecatelja, brTema);
@@ -92,35 +91,42 @@ public class MainClass {
             String[] noveKategorijeFotoaparata = randomIzListe(indexiKategorijaFotoaparata, brKategorija, kategorijeFotoaparata);
 
             //Set<Integer> indexiFotoaparata = getIndexes(brKategorija + 1, 3);
-
-         //   String[] noviFotoaparati = randomIzListeFotoaparata(indexiKategorijaFotoaparata, brKategorija + 1);
-          //  kategorija.setKategorija(noveKategorijeFotoaparata[i]);
+            //   String[] noviFotoaparati = randomIzListeFotoaparata(indexiKategorijaFotoaparata, brKategorija + 1);
+            //  kategorija.setKategorija(noveKategorijeFotoaparata[i]);
             //     kategorija.setFotoaparat(noviFotoaparati);
             kategorija.setKategorija(noveKategorijeFotoaparata);
             tema.setKategorija(kategorija);
 
-            System.out.println("Redni broj natjecatelja: " + (i + 1)); //redni broj natjecatelja
-            System.out.println("Kategorije fotoaparata: " + Arrays.toString(tema.getKategorija().getKategorija()));
-
+            //System.out.println("Redni broj natjecatelja: " + (i + 1)); //redni broj natjecatelja
+            //System.out.println("Kategorije fotoaparata: " + Arrays.toString(tema.getKategorija().getKategorija()));
             Map<String, String[]> aMap = new HashMap<String, String[]>();
             aMap.size();
             aMap.put("tema", noveTemeNatjecatelja);
-            System.out.println("Teme: " + Arrays.toString(aMap.get("tema")));
-            System.out.println(noveTemeNatjecatelja.length);
+            //System.out.println("Teme: " + Arrays.toString(aMap.get("tema")));
+            //System.out.println(noveTemeNatjecatelja.length);
 
-            for (int j = 0; j < noveKategorijeFotoaparata.length; j++) {
-                String kategorijaPrijave = noveKategorijeFotoaparata[j];
+            for (int y = 0; y < noveTemeNatjecatelja.length; y++) {
 
-                fotografija++;
+                aMap.get(y);
 
-                Prijava prijavaNatjecatelja = new Prijava(i + 1, noveTemeNatjecatelja[i], noveKategorijeFotoaparata[j], (kreirajKonkretniFactory(kategorijaPrijave)));
+                for (int j = 0; j < noveKategorijeFotoaparata.length; j++) {
+                    String kategorijaPrijave = noveKategorijeFotoaparata[j];
 
-                System.out.println(prijavaNatjecatelja.getBrNatjecatelja() + "  " + prijavaNatjecatelja.getTema() + "  " + prijavaNatjecatelja.getKategorija() + " " + prijavaNatjecatelja.getFotoaparat() + " " + fotografija);
+                    fotografija++;
 
-                System.out.println("");
+                    int korektnost = slucajniBroj.nextInt(21 - 0) + 0;
+
+                    Prijava prijavaNatjecatelja = new Prijava(i + 1, noveTemeNatjecatelja[y], noveKategorijeFotoaparata[j], (kreirajKonkretniFactory(kategorijaPrijave)), korektnost);
+
+                    System.out.println(prijavaNatjecatelja.getBrNatjecatelja() + "  " + prijavaNatjecatelja.getTema() + "   " + prijavaNatjecatelja.getKategorija() + " " + prijavaNatjecatelja.getFotoaparat().getClass().getSimpleName()
+                            + " " + "fotka" + fotografija + " " + prijavaNatjecatelja.getKorektnost());
+
+                    System.out.println("");
+                }
+
             }
 
-      //      tema.setTema(noveTemeNatjecatelja[i]);
+            //      tema.setTema(noveTemeNatjecatelja[i]);
             //String[][] nTeme = new String[noveTemeNatjecatelja.length][noveKategorijeFotoaparata.length];
             /* for (int y = 0; y < noveTemeNatjecatelja.length; y++) {
              for (j = 0; j < noveKategorijeFotoaparata.length; j++) {
@@ -128,9 +134,8 @@ public class MainClass {
              System.out.println(nTeme[y][j]);
              }
              }*/
-
             Natjecatelj natjecatelj = new Natjecatelj(i + 1, tema);
-            System.out.println(natjecatelj);
+           // System.out.println(natjecatelj);
 
             //  Fotoaparat fotoaparati = natjecatelj.getTema().getKategorija().setFotoaparat();
         }

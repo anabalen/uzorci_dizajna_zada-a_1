@@ -20,7 +20,7 @@ public class OLYMPUSEM10 implements Fotoaparat {
         camera.setZoom("3x");
         camera.setIntegriraniRukohvat(true);
         
-         System.out.println("Inside Olympus::make() method.");
+       //  System.out.println("Inside Olympus::make() method.");
     }
     
 }

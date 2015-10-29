@@ -21,7 +21,7 @@ public class LUMIXG6H implements Fotoaparat{
         camera.setIntegriraniRukohvat(true);
         
         
-      System.out.println("Inside Lumix::make() method.");
+     // System.out.println("Inside Lumix::make() method.");
     }
     
 }

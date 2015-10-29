@@ -22,7 +22,7 @@ public class CanonIXUS170 implements Fotoaparat
         camera.setObjektiv("4.5-54mm");
         camera.setOkular(false);
         
-         System.out.println("Inside Canon::make() method.");
+        // System.out.println("Inside Canon::make() method.");
     }
 
  
