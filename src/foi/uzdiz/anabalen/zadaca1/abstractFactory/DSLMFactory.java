@@ -1,76 +1,46 @@
 package foi.uzdiz.anabalen.zadaca1.abstractFactory;
 
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
-import foi.uzdiz.anabalen.zadaca1.abstractFactory.AbstractFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.LUMIXG6H;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.OLYMPUSEM10;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.SonyA5000;
-
 
 /**
  *
  * @author Ana-Marija
  */
-public class DSLMFactory extends AbstractFactory{
+public class DSLMFactory implements AbstractFactory {
 
-    private String naziv = "";
-    private String objektiv = "";
-    private String zoom = "";
-    private boolean integriraniRukohvat = false;
+    private String naziv;
+    private String objektiv;
+    private String zoom;
+    private boolean dodatniRukohvat;
 
-    public void setNaziv(String naziv) {
+    public DSLMFactory() {
         this.naziv = naziv;
-    }
-    
-    public void setObjektiv(String objektiv) {
         this.objektiv = objektiv;
-    }
-    
-    public void setZoom(String zoom) {
         this.zoom = zoom;
-    }
-    
-    public void setIntegriraniRukohvat(boolean integriraniRukohvat) {
-        this.integriraniRukohvat = integriraniRukohvat;
+        this.dodatniRukohvat = dodatniRukohvat;
     }
 
-    public String getNaziv() {
-        return naziv;
-    }
-
-    public String getObjektiv() {
-        return objektiv;
-    }
-
-    public String getZoom() {
-        return zoom;
-    }
-
-    public boolean isIntegriraniRukohvat() {
-        return integriraniRukohvat;
-    }
-  
-
-    
-    
     @Override
-    public Fotoaparat makeCamera(int dslm) {
-        
-    
-        if(dslm == 0){
+    public Fotoaparat createFotoaparat(int dslm) {
+
+        if (dslm == 0) {
             return new SonyA5000();
-        }		
-      
-        if(dslm == 1){
-            return new LUMIXG6H();
-         
-        }else if(dslm == 2){
-            return new OLYMPUSEM10();
-         
+
         }
-      
+
+        if (dslm == 1) {
+            return new LUMIXG6H();
+
+        } else if (dslm == 2) {
+            return new OLYMPUSEM10();
+
+        }
+
         return null;
-              
+
     }
-    
+
 }

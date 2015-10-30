@@ -1,30 +1,53 @@
 package foi.uzdiz.anabalen.zadaca1.abstractfactory.models;
 
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
-import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
 
 /**
  *
  * @author Ana-Marija
  */
-public class CanonEOS100D implements Fotoaparat {
-    
-    @Override
-    public String make() {
-       
-       DSLRFactory camera = new DSLRFactory();
-        camera.setNaziv("CanonEOS100D");
-        camera.setObjektiv("EF-S 55-250mm");
-        camera.setZoom("3x");
-        camera.setIntegriraniRukohvat(true);
-        camera.setIntegriraniBlic(true);
-        camera.setStabilizacijaSlike(false);
-               
-        
-        return camera.getObjektiv();
-     // System.out.println("Inside Canon::make() method.");
-   }
+public class CanonEOS100D extends Fotoaparat {
 
-    
-    
+    private final String naziv;
+    private final String objektiv;
+    private final String zoom;
+    private final boolean intgriraniRukohvat;
+    private final boolean intgriraniBlic;
+    private final boolean stabilizacijaSlike;
+
+    public CanonEOS100D() {
+        this.naziv = "CanonEOS100D";
+        this.objektiv = "EF-S 55-250mm";
+        this.zoom = "3x";
+        this.intgriraniRukohvat = true;
+        this.intgriraniBlic = true;
+        this.stabilizacijaSlike = false;
+    }
+
+    @Override
+    public String getNaziv() {
+        return this.naziv;
+    }
+
+    @Override
+    public String getObjektiv() {
+        return this.objektiv;
+    }
+
+    public String getZoom() {
+        return zoom;
+    }
+
+    public boolean isIntgriraniRukohvat() {
+        return intgriraniRukohvat;
+    }
+
+    public boolean isIntgriraniBlic() {
+        return intgriraniBlic;
+    }
+
+    public boolean isStabilizacijaSlike() {
+        return stabilizacijaSlike;
+    }
+
 }

@@ -6,17 +6,17 @@ import foi.uzdiz.anabalen.zadaca1.Prijava;
  *
  * @author Ana-Marija
  */
-
-
 public class Natjecanje {
 
     private static volatile Natjecanje INSTANCE;
-    
-    private Natjecanje() {}
- 
+
+    private Natjecanje() {
+    }
+
     /**
      * Get instance
-     * @return 
+     *
+     * @return
      */
     public static Natjecanje getInstance() {
 
@@ -30,11 +30,10 @@ public class Natjecanje {
         }
         return INSTANCE;
     }
-    public Prijava init()
-    {
+
+    public Prijava init() {
         Prijava prijava = new Prijava();
         return prijava;
     }
-    
-    
+
 }

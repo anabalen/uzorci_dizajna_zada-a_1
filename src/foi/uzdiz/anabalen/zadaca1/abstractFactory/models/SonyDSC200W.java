@@ -1,26 +1,35 @@
 package foi.uzdiz.anabalen.zadaca1.abstractfactory.models;
 
-
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
-import foi.uzdiz.anabalen.zadaca1.abstractFactory.CompactFactory;
 
 /**
  *
  * @author Ana-Marija
  */
-public class SonyDSC200W implements Fotoaparat{
+public class SonyDSC200W extends Fotoaparat {
 
+    private final String naziv;
+    private final String objektiv;
+    private final boolean okular;
+
+    public SonyDSC200W() {
+        this.naziv = "SonyDSC200W";
+        this.objektiv = "G-3,3-5,9";
+        this.okular = false;
+    }
 
     @Override
-    public String make() {
-        
-        CompactFactory camera = new CompactFactory();
-        camera.setNaziv("Sony DSC-WX200B");
-        camera.setObjektiv("3.3-5.9mm");
-        camera.setOkular(false);
-        
-        return camera.getObjektiv();
-       // System.out.println("Inside Sony::make() method.");
+    public String getNaziv() {
+        return this.naziv;
     }
-    
+
+    @Override
+    public String getObjektiv() {
+        return this.objektiv;
+    }
+
+    public boolean isOkular() {
+        return okular;
+    }
+
 }

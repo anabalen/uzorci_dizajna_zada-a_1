@@ -4,11 +4,10 @@ package foi.uzdiz.anabalen.zadaca1;
  *
  * @author Ana-Marija
  */
-public class Kategorija {
+public class Tema {
+    protected String naziv;
     
-     protected String naziv;
-    
-    public Kategorija(String a){
+    public Tema(String a){
         this.naziv = a;
     }
 

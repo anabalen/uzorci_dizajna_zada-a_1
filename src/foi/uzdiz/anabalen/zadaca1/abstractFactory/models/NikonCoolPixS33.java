@@ -1,29 +1,36 @@
 package foi.uzdiz.anabalen.zadaca1.abstractfactory.models;
 
-
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
-import foi.uzdiz.anabalen.zadaca1.abstractFactory.CompactFactory;
 
 /**
  *
  * @author Ana-Marija
  */
-public class NikonCoolPixS33 implements Fotoaparat{
+public class NikonCoolPixS33 extends Fotoaparat {
 
+    private final String naziv;
+    private final String objektiv;
+    private final boolean okular;
 
-    @Override
-    public String make() {
-        
-        CompactFactory camera = new CompactFactory();
-        camera.setNaziv("Nikon CoolPix S33");
-        camera.setObjektiv("NIKKOR 4.1-12.3mm");
-        camera.setOkular(false);
-        
-        
-        return camera.getObjektiv();
-       // System.out.println("Inside Nikon::make() method.");
+    public NikonCoolPixS33() {
+        this.naziv = "NikonCoolPixS33";
+        this.objektiv = "H-PS140442";
+        this.okular = true;
     }
 
+    @Override
+    public String getNaziv() {
+        return this.naziv;
+    }
+
+    @Override
+    public String getObjektiv() {
+        return this.objektiv;
+    }
+
+    public boolean isOkular() {
+        return okular;
+    }
     
-    
+
 }

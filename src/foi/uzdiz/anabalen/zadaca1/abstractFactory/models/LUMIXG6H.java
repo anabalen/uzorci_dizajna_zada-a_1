@@ -1,27 +1,41 @@
 package foi.uzdiz.anabalen.zadaca1.abstractfactory.models;
 
-
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
-import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLMFactory;
 
 /**
  *
  * @author Ana-Marija
  */
-public class LUMIXG6H implements Fotoaparat{
+public class LUMIXG6H extends Fotoaparat {
 
+    private final String naziv;
+    private final String objektiv;
+    private final String zoom;
+    private final boolean dodatniRukohvat;
+
+    public LUMIXG6H() {
+        this.naziv = "LUMIXG6H";
+        this.objektiv = "H-PS14042";
+        this.zoom = "4x";
+        this.dodatniRukohvat = true;
+    }
 
     @Override
-    public String make() {
-        
-         DSLMFactory camera = new DSLMFactory();
-        camera.setNaziv("Lumix G DMC-G6H");
-        camera.setObjektiv("H-PS14042");
-        camera.setZoom("4x");
-        camera.setIntegriraniRukohvat(true);
-        
-        return camera.getObjektiv();
-     // System.out.println("Inside Lumix::make() method.");
+    public String getNaziv() {
+        return this.naziv;
     }
-    
+
+    @Override
+    public String getObjektiv() {
+        return this.objektiv;
+    }
+
+    public String getZoom() {
+        return zoom;
+    }
+
+    public boolean isDodatniRukohvat() {
+        return dodatniRukohvat;
+    }
+
 }

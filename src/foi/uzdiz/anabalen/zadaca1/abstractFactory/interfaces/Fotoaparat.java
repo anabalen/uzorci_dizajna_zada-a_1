@@ -4,9 +4,10 @@ package foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces;
  *
  * @author Ana-Marija
  */
-public interface Fotoaparat {
-   
-    public String make();
-    
-   
+public abstract class Fotoaparat {
+
+    public abstract String getNaziv();
+
+    public abstract String getObjektiv();
+
 }

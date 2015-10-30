@@ -1,21 +1,20 @@
 Popis svih prijava natjecanja: 
-1   | sport    | DSLR  | CanonEOS700D  | fotka1  | 12
-1   | makro    | DSLR  | CanonEOS700D  | fotka2  | 10
-2   | makro    | DSLR  | NikonD3200  | fotka3  | 20
-2   | sport    | DSLR  | NikonD3200  | fotka4  | 10
-3   | montaža    | DSLM  | LUMIXG6H  | fotka5  | 20
-3   | makro    | DSLM  | SonyA5000  | fotka6  | 11
-3   | portret    | DSLM  | SonyA5000  | fotka7  | 6
-4   | priroda    | Compact  | SonyDSC200W  | fotka8  | 11
-5   | portret    | DSLR  | CanonEOS100D  | fotka9  | 16
-5   | montaža    | DSLR  | CanonEOS700D  | fotka10  | 20
-5   | makro    | DSLR  | CanonEOS700D  | fotka11  | 9
-5   | sport    | DSLR  | CanonEOS100D  | fotka12  | 10
-6   | sport    | Compact  | SonyDSC200W  | fotka13  | 11
-6   | montaža    | Compact  | SonyDSC200W  | fotka14  | 11
-6   | priroda    | Compact  | NikonCoolPixS33  | fotka15  | 4
-6   | makro    | Compact  | NikonCoolPixS33  | fotka16  | 8
-7   | makro    | DSLR  | CanonEOS100D  | fotka17  | 10
-7   | montaža    | DSLR  | CanonEOS100D  | fotka18  | 7
-7   | sport    | DSLR  | CanonEOS100D  | fotka19  | 19
-7   | priroda    | DSLR  | NikonD3200  | fotka20  | 3
+1   | portret    | Compact  | SonyDSC200W   | G-3,3-5,9  | fotka: blenda - 7.870707, ekspozicija - 0.96077025  | 0
+1   | priroda    | Compact  | NikonCoolPixS33   | H-PS140442  | fotka: blenda - 4.7567434, ekspozicija - 3.9292698  | 1
+2   | sport    | DSLM  | LUMIXG6H   | H-PS14042  | fotka: blenda - 16.113281, ekspozicija - 9.887858  | 5
+3   | portret    | Compact  | SonyDSC200W   | G-3,3-5,9  | fotka: blenda - 21.053833, ekspozicija - 2.3959584  | 5
+4   | sport    | DSLM  | LUMIXG6H   | H-PS14042  | fotka: blenda - 14.683769, ekspozicija - 2.0110047  | 17
+5   | sport    | Compact  | NikonCoolPixS33   | H-PS140442  | fotka: blenda - 3.2659779, ekspozicija - 7.37216  | 2
+6   | makro    | DSLR  | CanonEOS700D   | EF-S 10-18mm  | fotka: blenda - 7.831906, ekspozicija - 9.228456  | 9
+6   | priroda    | DSLR  | NikonD3200   | AF 18-105mm  | fotka: blenda - 9.215976, ekspozicija - 3.1399293  | 5
+7   | makro    | Compact  | SonyDSC200W   | G-3,3-5,9  | fotka: blenda - 9.9941225, ekspozicija - 7.680903  | 14
+7   | sport    | Compact  | SonyDSC200W   | G-3,3-5,9  | fotka: blenda - 0.01917386, ekspozicija - 4.284289  | 4
+7   | portret    | Compact  | NikonCoolPixS33   | H-PS140442  | fotka: blenda - 6.02218, ekspozicija - 6.9491253  | 10
+8   | portret    | DSLM  | LUMIXG6H   | H-PS14042  | fotka: blenda - 14.970703, ekspozicija - 8.886624  | 6
+8   | priroda    | DSLM  | OLYMPUSEM10   | 14-42mm  | fotka: blenda - 10.089585, ekspozicija - 2.7640843  | 5
+9   | makro    | DSLM  | OLYMPUSEM10   | 14-42mm  | fotka: blenda - 20.204058, ekspozicija - 8.021  | 2
+9   | portret    | DSLM  | OLYMPUSEM10   | 14-42mm  | fotka: blenda - 0.7561637, ekspozicija - 6.646203  | 10
+10   | priroda    | DSLM  | LUMIXG6H   | H-PS14042  | fotka: blenda - 7.589817, ekspozicija - 1.3471335  | 5
+10   | makro    | DSLM  | OLYMPUSEM10   | 14-42mm  | fotka: blenda - 1.4577196, ekspozicija - 3.3417625  | 9
+11   | sport    | DSLR  | NikonD3200   | AF 18-105mm  | fotka: blenda - 20.929245, ekspozicija - 6.188012  | 1
+11   | portret    | DSLR  | NikonD3200   | AF 18-105mm  | fotka: blenda - 20.986565, ekspozicija - 6.6091895  | 17

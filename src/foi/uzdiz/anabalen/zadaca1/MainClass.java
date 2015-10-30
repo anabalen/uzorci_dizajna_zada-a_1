@@ -5,6 +5,8 @@ import foi.uzdiz.anabalen.zadaca1.abstractFactory.AbstractFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.CompactFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLMFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
+import foi.uzdiz.anabalen.zadaca1.abstractFactory.FotoaparatFactory;
+import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
 import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -12,11 +14,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author Ana-Marija
@@ -39,7 +36,9 @@ public class MainClass {
         int brKategorija;
         int brNatjecatelja;
         int brTemaPoNatjecatelju;
+
         Random rand = new Random(sjeme);
+        Random slucajniBroj = new Random();
 
         //random generiranje broja tema, kateorija...
         brTema = rand.nextInt(maxBrTema - 1) + 1;
@@ -53,38 +52,32 @@ public class MainClass {
 
         brNatjecatelja = rand.nextInt(maxBrNatjecatelja - 0) + 0;
 
+        //ispis izgeneriranih brojeva
         System.out.println("Broj tema: " + brTema);
         System.out.println("Broj kategorija: " + brKategorija);
         System.out.println("Broj tema po natjecatelju: " + brTemaPoNatjecatelju);
         System.out.println("Broj natjecatelja: " + brNatjecatelja);
         System.out.println("");
 
-        // System.out.println(natjecaj + "objekt");
-        //Teme tema = new Teme();
-        //Kategorija kategorija = new Kategorija();
         String[] listaTema = listaTema();
-
-        //Set<Integer> indexi = getIndexes(brTema, listaTema.length - 1);
-        //String[] noveTeme = randomIzListe(indexi, brTema, listaTema);
         String[] kategorijeFotoaparata = kategorijaFotoaparata(3);
 
-        Random slucajniBroj = new Random();
         int brojTemaNatjecatelja;
-        //int brojTeme;
         String[] temeZaNatjecatelja;
 
         int i;
-        int fotografija = 0;
 
         //kreiranje prijave unutar singletona natjecanje
         Natjecanje singleton = Natjecanje.getInstance();
         Prijava prijava = singleton.init();
+
+        // kreiranje objekta za ispis u vanjsku datoteku
         FileWriter fileWriter = new FileWriter(datoteka);
         fileWriter.write("Popis svih prijava natjecanja: \n");
 
         for (i = 0; i < brNatjecatelja; i++) {
 
-            //generiranje broja temat po svakom natjecatelju
+            //generiranje broja tema po svakom natjecatelju
             brojTemaNatjecatelja = slucajniBroj.nextInt((brTema) - 1) + 1;
             temeZaNatjecatelja = new String[brojTemaNatjecatelja];
 
@@ -94,23 +87,9 @@ public class MainClass {
             Set<Integer> indexiKategorijaFotoaparata = getIndexes(brKategorija + 1, 3);
             String[] noveKategorijeFotoaparata = randomIzListe(indexiKategorijaFotoaparata, brKategorija, kategorijeFotoaparata);
 
-            //Set<Integer> indexiFotoaparata = getIndexes(brKategorija + 1, 3);
-            //   String[] noviFotoaparati = randomIzListeFotoaparata(indexiKategorijaFotoaparata, brKategorija + 1);
-            //  kategorija.setKategorija(noveKategorijeFotoaparata[i]);
-            //     kategorija.setFotoaparat(noviFotoaparati);
-            /**
-             * nigdje ne koristimo objekt kategorije
-             *
-             */
-            //kategorija.setKategorija(noveKategorijeFotoaparata);
-            //tema.setKategorija(kategorija);
-            //System.out.println("Redni broj natjecatelja: " + (i + 1)); //redni broj natjecatelja
-            //System.out.println("Kategorije fotoaparata: " + Arrays.toString(tema.getKategorija().getKategorija()));
             Map<String, String[]> aMap = new HashMap<>();
             aMap.size();
             aMap.put("tema", noveTemeNatjecatelja);
-            //System.out.println("Teme: " + Arrays.toString(aMap.get("tema")));
-            //System.out.println(noveTemeNatjecatelja.length);
 
             for (int y = 0; y < noveTemeNatjecatelja.length; y++) {
 
@@ -119,12 +98,9 @@ public class MainClass {
                 for (int j = 0; j < noveKategorijeFotoaparata.length; j++) {
                     String kategorijaPrijave = noveKategorijeFotoaparata[j];
 
-                    fotografija++;
-                    // Natjecatelj natjecatelj = new Natjecatelj(i + 1, tema);
-
                     int korektnost = slucajniBroj.nextInt(21 - 0) + 0;
                     String diskvalifikacija = "";
-                    if(korektnost < 2){
+                    if (korektnost < 2) {
                         diskvalifikacija = "diskvalificiran";
                     }
 
@@ -136,32 +112,31 @@ public class MainClass {
                         case "Compact":
                             break;
                     }
-                    prijava = new Prijava(i + 1, noveTemeNatjecatelja[y], noveKategorijeFotoaparata[j], kreirajKonkretniFactory(kategorijaPrijave), fotografija, korektnost);
-                    System.out.println(prijava.getBrNatjecatelja() + "  " + prijava.getTema() + "   " + prijava.getKategorija() + " " + prijava.getFotoaparat().getClass().getSimpleName()
-                            + " " + "fotka" + prijava.getFotografija() + " " + prijava.getKorektnost() + "  " +diskvalifikacija);
+
+                    //kreiranje objekata za prijavu
+                    Fotoaparat fotoaparat = FotoaparatFactory.getFotoaparat(kreirajKonkretniFactory(kategorijaPrijave));
+                    Fotografija fotografija = new Fotografija();
+                    Natjecatelj natjecatelj = new Natjecatelj(i + 1);
+                    Tema tema = new Tema(noveTemeNatjecatelja[y]);
+                    Kategorija kategorija = new Kategorija(noveKategorijeFotoaparata[j]);
+
+                    //kreiranje prijave
+                    prijava = new Prijava(natjecatelj, tema, kategorija, fotoaparat, fotografija, korektnost);
+
+                    //ispis svih prijavljenih
+                    System.out.println(natjecatelj.getRbrNatjecatelja() + "  " + tema.getNaziv() + "   " + kategorija.getNaziv() + " " + fotoaparat.getNaziv() + "  " + fotoaparat.getObjektiv()
+                            + " " + "fotka: blenda - " + fotografija.getBlenda() + ", ekspozicija - " + fotografija.getEkspozicija() + " " + prijava.getKorektnost() + "  " + diskvalifikacija);
 
                     System.out.println("");
-                    
-                    
 
-                    fileWriter.write(prijava.getBrNatjecatelja() + "  " + " | " + prijava.getTema() + "   " + " | " + prijava.getKategorija() + " " + " | " + prijava.getFotoaparat().getClass().getSimpleName()
-                            + " " + " | " + "fotka" + prijava.getFotografija() + " " + " | " + prijava.getKorektnost() + "\n");
-                    
+                    //upis u datoteku
+                    fileWriter.write(natjecatelj.getRbrNatjecatelja() + "  " + " | " + tema.getNaziv() + "   " + " | " + kategorija.getNaziv() + " " + " | " + fotoaparat.getNaziv() + "  " + " | " + fotoaparat.getObjektiv()
+                            + " " + " | " + "fotka: blenda - " + fotografija.getBlenda() + ", ekspozicija - " + fotografija.getEkspozicija() + " " + " | " + prijava.getKorektnost() + "\n");
+
                 }
-
             }
-
-            //      tema.setTema(noveTemeNatjecatelja[i]);
-            //String[][] nTeme = new String[noveTemeNatjecatelja.length][noveKategorijeFotoaparata.length];
-            /* for (int y = 0; y < noveTemeNatjecatelja.length; y++) {
-             for (j = 0; j < noveKategorijeFotoaparata.length; j++) {
-             nTeme[y][j] = noveTemeNatjecatelja[y] + "  " + noveKategorijeFotoaparata[j];
-             System.out.println(nTeme[y][j]);
-             }
-             }*/
-           // System.out.println(natjecatelj);
-            //  Fotoaparat fotoaparati = natjecatelj.getTema().getKategorija().setFotoaparat();
         }
+        //zatvaranje datoteke za upis
         fileWriter.close();
 
     }
@@ -202,7 +177,6 @@ public class MainClass {
                 break;
             } else {
                 noveTeme[x] = listaTema[index];
-                //System.out.println(noveTeme[x]+" "+ x); 
                 x++;
             }
         }
