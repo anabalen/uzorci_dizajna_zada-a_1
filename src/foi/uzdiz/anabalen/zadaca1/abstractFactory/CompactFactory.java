@@ -3,7 +3,6 @@ package foi.uzdiz.anabalen.zadaca1.abstractFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.CanonIXUS170;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.NikonCoolPixS33;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.SonyDSC200W;
-import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
 
 /**
  *

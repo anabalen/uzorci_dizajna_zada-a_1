@@ -1,4 +1,4 @@
-package foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces;
+package foi.uzdiz.anabalen.zadaca1.abstractFactory;
 
 /**
  *

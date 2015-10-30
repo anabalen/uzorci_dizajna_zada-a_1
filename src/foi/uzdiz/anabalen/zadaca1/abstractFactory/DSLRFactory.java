@@ -1,6 +1,5 @@
 package foi.uzdiz.anabalen.zadaca1.abstractFactory;
 
-import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.CanonEOS100D;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.CanonEOS700D;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.NikonD3200;

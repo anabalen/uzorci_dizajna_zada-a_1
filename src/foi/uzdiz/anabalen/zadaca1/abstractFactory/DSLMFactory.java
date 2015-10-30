@@ -1,6 +1,5 @@
 package foi.uzdiz.anabalen.zadaca1.abstractFactory;
 
-import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.LUMIXG6H;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.OLYMPUSEM10;
 import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.SonyA5000;

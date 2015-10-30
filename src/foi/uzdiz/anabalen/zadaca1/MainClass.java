@@ -6,7 +6,7 @@ import foi.uzdiz.anabalen.zadaca1.abstractFactory.CompactFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLMFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.FotoaparatFactory;
-import foi.uzdiz.anabalen.zadaca1.abstractfactory.interfaces.Fotoaparat;
+import foi.uzdiz.anabalen.zadaca1.abstractFactory.Fotoaparat;
 import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
