@@ -1,0 +1,21 @@
+Popis svih prijava natjecanja: 
+1   | sport    | DSLR  | CanonEOS700D  | fotka1  | 12
+1   | makro    | DSLR  | CanonEOS700D  | fotka2  | 10
+2   | makro    | DSLR  | NikonD3200  | fotka3  | 20
+2   | sport    | DSLR  | NikonD3200  | fotka4  | 10
+3   | montaža    | DSLM  | LUMIXG6H  | fotka5  | 20
+3   | makro    | DSLM  | SonyA5000  | fotka6  | 11
+3   | portret    | DSLM  | SonyA5000  | fotka7  | 6
+4   | priroda    | Compact  | SonyDSC200W  | fotka8  | 11
+5   | portret    | DSLR  | CanonEOS100D  | fotka9  | 16
+5   | montaža    | DSLR  | CanonEOS700D  | fotka10  | 20
+5   | makro    | DSLR  | CanonEOS700D  | fotka11  | 9
+5   | sport    | DSLR  | CanonEOS100D  | fotka12  | 10
+6   | sport    | Compact  | SonyDSC200W  | fotka13  | 11
+6   | montaža    | Compact  | SonyDSC200W  | fotka14  | 11
+6   | priroda    | Compact  | NikonCoolPixS33  | fotka15  | 4
+6   | makro    | Compact  | NikonCoolPixS33  | fotka16  | 8
+7   | makro    | DSLR  | CanonEOS100D  | fotka17  | 10
+7   | montaža    | DSLR  | CanonEOS100D  | fotka18  | 7
+7   | sport    | DSLR  | CanonEOS100D  | fotka19  | 19
+7   | priroda    | DSLR  | NikonD3200  | fotka20  | 3

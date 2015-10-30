@@ -13,7 +13,8 @@ import java.util.Random;
  *
  * @author mario
  */
-public class Prijava {
+public final class Prijava {
+
 
     protected int brNatjecatelja;
     protected String tema;
@@ -26,6 +27,7 @@ public class Prijava {
     public Prijava(){}
     public Prijava(int brNatjecatelja, String tema, String kategorija, AbstractFactory factory, int fotografija, int korektnost) {
 
+    
         this.brNatjecatelja = brNatjecatelja;
         this.tema = tema;
         this.kategorija = kategorija;
@@ -33,9 +35,6 @@ public class Prijava {
         this.korektnost = korektnost;
         this.fotografija = fotografija;
         
-        //this.fotoaparat = fotoaparat;
-        //Fotoaparat fotoaparat = factory.makeCamera();
-        //this.fotografija = fotografija;
         int redniBrojFotica;
         Random rndFotic = new Random();
         redniBrojFotica = rndFotic.nextInt(3 - 0) + 0;
@@ -43,11 +42,10 @@ public class Prijava {
         fotic = factory.makeCamera(redniBrojFotica);
         fotic.make();
         
-
         
         
     }
-
+ 
     /**
      * Getteri i setteri za prijavu
      *

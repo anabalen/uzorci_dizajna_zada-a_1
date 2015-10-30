@@ -11,7 +11,6 @@ import foi.uzdiz.anabalen.zadaca1.Prijava;
 public class Natjecanje {
 
     private static volatile Natjecanje INSTANCE;
-    protected Prijava prijava;
     
     private Natjecanje() {}
  

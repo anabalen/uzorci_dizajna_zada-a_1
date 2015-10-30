@@ -5,8 +5,7 @@ import foi.uzdiz.anabalen.zadaca1.abstractFactory.AbstractFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.CompactFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLMFactory;
 import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
-import foi.uzdiz.anabalen.zadaca1.abstractfactory.models.SonyA5000;
-import java.util.Arrays;
+import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -24,7 +23,7 @@ import java.util.Set;
  */
 public class MainClass {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         //inicijalizacija varijabli
         int sjeme = Integer.parseInt(args[0]);
@@ -32,11 +31,10 @@ public class MainClass {
         int maxBrTemaNatjecatelj = Integer.parseInt(args[2]);
         int maxBrKategorija = Integer.parseInt(args[3]);
         int maxBrNatjecatelja = Integer.parseInt(args[4]);
-        /**
-         * int brClanovaZirija = Integer.parseInt(args[5]); String klasaBodova =
-         * args[6]; String datoteka = args[7];
-         *
-         */
+        int brClanovaZirija = Integer.parseInt(args[5]);
+        String klasaBodova = args[6];
+        String datoteka = args[7];
+
         int brTema;
         int brKategorija;
         int brNatjecatelja;
@@ -61,10 +59,9 @@ public class MainClass {
         System.out.println("Broj natjecatelja: " + brNatjecatelja);
         System.out.println("");
 
-        Natjecanje natjecaj = Natjecanje.getInstance();
         // System.out.println(natjecaj + "objekt");
-        Teme tema = new Teme();
-        Kategorija kategorija = new Kategorija();
+        //Teme tema = new Teme();
+        //Kategorija kategorija = new Kategorija();
         String[] listaTema = listaTema();
 
         //Set<Integer> indexi = getIndexes(brTema, listaTema.length - 1);
@@ -73,16 +70,18 @@ public class MainClass {
 
         Random slucajniBroj = new Random();
         int brojTemaNatjecatelja;
-        int brojTeme;
+        //int brojTeme;
         String[] temeZaNatjecatelja;
 
         int i;
         int fotografija = 0;
-        
+
         //kreiranje prijave unutar singletona natjecanje
         Natjecanje singleton = Natjecanje.getInstance();
-        Prijava prijavaNatjecatelja = singleton.init();
-        
+        Prijava prijava = singleton.init();
+        FileWriter fileWriter = new FileWriter(datoteka);
+        fileWriter.write("Popis svih prijava natjecanja: \n");
+
         for (i = 0; i < brNatjecatelja; i++) {
 
             //generiranje broja temat po svakom natjecatelju
@@ -99,12 +98,15 @@ public class MainClass {
             //   String[] noviFotoaparati = randomIzListeFotoaparata(indexiKategorijaFotoaparata, brKategorija + 1);
             //  kategorija.setKategorija(noveKategorijeFotoaparata[i]);
             //     kategorija.setFotoaparat(noviFotoaparati);
-            kategorija.setKategorija(noveKategorijeFotoaparata);
-            tema.setKategorija(kategorija);
-
+            /**
+             * nigdje ne koristimo objekt kategorije
+             *
+             */
+            //kategorija.setKategorija(noveKategorijeFotoaparata);
+            //tema.setKategorija(kategorija);
             //System.out.println("Redni broj natjecatelja: " + (i + 1)); //redni broj natjecatelja
             //System.out.println("Kategorije fotoaparata: " + Arrays.toString(tema.getKategorija().getKategorija()));
-            Map<String, String[]> aMap = new HashMap<String, String[]>();
+            Map<String, String[]> aMap = new HashMap<>();
             aMap.size();
             aMap.put("tema", noveTemeNatjecatelja);
             //System.out.println("Teme: " + Arrays.toString(aMap.get("tema")));
@@ -118,22 +120,32 @@ public class MainClass {
                     String kategorijaPrijave = noveKategorijeFotoaparata[j];
 
                     fotografija++;
+                    // Natjecatelj natjecatelj = new Natjecatelj(i + 1, tema);
 
                     int korektnost = slucajniBroj.nextInt(21 - 0) + 0;
-                                            
-                    switch(noveKategorijeFotoaparata[j])
-                    {
-                        case "DSLR":break;
-                        case "DSLM":break;
-                        case "Compact": break;
+                    String diskvalifikacija = "";
+                    if(korektnost < 2){
+                        diskvalifikacija = "diskvalificiran";
                     }
-                    prijavaNatjecatelja = new Prijava(i + 1, noveTemeNatjecatelja[y], noveKategorijeFotoaparata[j], kreirajKonkretniFactory(kategorijaPrijave), fotografija, korektnost);
 
-                    System.out.println(prijavaNatjecatelja.getBrNatjecatelja() + "  " + prijavaNatjecatelja.getTema() + "   " + prijavaNatjecatelja.getKategorija() + " " + prijavaNatjecatelja.getFotoaparat().getClass().getSimpleName()
-                            + " " + "fotka" + prijavaNatjecatelja.getFotografija() + " " + prijavaNatjecatelja.getKorektnost());
+                    switch (noveKategorijeFotoaparata[j]) {
+                        case "DSLR":
+                            break;
+                        case "DSLM":
+                            break;
+                        case "Compact":
+                            break;
+                    }
+                    prijava = new Prijava(i + 1, noveTemeNatjecatelja[y], noveKategorijeFotoaparata[j], kreirajKonkretniFactory(kategorijaPrijave), fotografija, korektnost);
+                    System.out.println(prijava.getBrNatjecatelja() + "  " + prijava.getTema() + "   " + prijava.getKategorija() + " " + prijava.getFotoaparat().getClass().getSimpleName()
+                            + " " + "fotka" + prijava.getFotografija() + " " + prijava.getKorektnost() + "  " +diskvalifikacija);
 
                     System.out.println("");
                     
+                    
+
+                    fileWriter.write(prijava.getBrNatjecatelja() + "  " + " | " + prijava.getTema() + "   " + " | " + prijava.getKategorija() + " " + " | " + prijava.getFotoaparat().getClass().getSimpleName()
+                            + " " + " | " + "fotka" + prijava.getFotografija() + " " + " | " + prijava.getKorektnost() + "\n");
                     
                 }
 
@@ -147,18 +159,18 @@ public class MainClass {
              System.out.println(nTeme[y][j]);
              }
              }*/
-            Natjecatelj natjecatelj = new Natjecatelj(i + 1, tema);
            // System.out.println(natjecatelj);
-
             //  Fotoaparat fotoaparati = natjecatelj.getTema().getKategorija().setFotoaparat();
         }
-        
+        fileWriter.close();
+
     }
 
     /**
      * Dobivanje indexa za teme
      *
      * @param velicina
+     * @param broj
      * @return
      */
     public static Set<Integer> getIndexes(int velicina, int broj) {
@@ -232,12 +244,13 @@ public class MainClass {
 
     private static AbstractFactory kreirajKonkretniFactory(String kategorijaFotoaparata) {
 
-        if (kategorijaFotoaparata.equals("DSLM")) {
-            return new DSLMFactory();
-        } else if (kategorijaFotoaparata == "DSLR") {
-            return new DSLRFactory();
-        } else {
-            return new CompactFactory();
+        switch (kategorijaFotoaparata) {
+            case "DSLM":
+                return new DSLMFactory();
+            case "DSLR":
+                return new DSLRFactory();
+            default:
+                return new CompactFactory();
         }
     }
 }

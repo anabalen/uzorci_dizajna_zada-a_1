@@ -9,6 +9,11 @@ import foi.uzdiz.anabalen.zadaca1.abstractFactory.DSLRFactory;
  */
 public class CanonEOS700D implements Fotoaparat{
 
+    /**
+     *
+     * @return
+     */
+    @Override
    public String make() {
        
        DSLRFactory camera = new DSLRFactory();
@@ -23,6 +28,5 @@ public class CanonEOS700D implements Fotoaparat{
        
       //System.out.println("Inside Canon::make() method.");
    }
-
    
 }
